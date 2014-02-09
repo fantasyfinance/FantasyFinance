@@ -87,7 +87,8 @@
        android:text="@string/login"
        android:textColor="#ffffff"
        android:textStyle="italic"
-       android:typeface="serif" />
+       android:typeface="serif"
+       android:onClick="onLoginClick" />
 
    <TextView
        android:id="@+id/textView3"
@@ -100,7 +101,8 @@
        android:textAppearance="?android:attr/textAppearanceSmall"
        android:textColor="#ffffff"
        android:textStyle="italic"
-       android:typeface="serif" />
+       android:typeface="serif" 
+       android:onClick="onRegisterClick"/>
 
    <Button
        android:id="@+id/Button01"
@@ -112,7 +114,8 @@
        android:text="@string/cancel"
        android:textColor="#ffffff"
        android:textStyle="italic"
-       android:typeface="serif" />
+       android:typeface="serif"
+       android:onClick="onResetClick" />
 
    <ImageButton
        android:id="@+id/imageButton1"
@@ -121,6 +124,7 @@
        android:layout_alignParentBottom="true"
        android:layout_alignParentRight="true"
        android:layout_toRightOf="@+id/textView1"
-       android:src="@android:drawable/ic_menu_help" />
+       android:src="@android:drawable/ic_menu_help" 
+       android:onClick="onForgotPassword"/>
 
 </RelativeLayout>
