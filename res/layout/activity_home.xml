@@ -20,7 +20,8 @@
        android:textAppearance="?android:attr/textAppearanceLarge"
        android:textColor="#ffffff"
        android:textStyle="italic"
-       android:typeface="serif" />
+       android:typeface="serif" 
+       />
 
    <ImageView
        android:id="@+id/imageView1"
@@ -75,7 +76,8 @@
        android:layout_height="wrap_content"
        android:layout_alignBottom="@+id/TextView01"
        android:layout_alignLeft="@+id/editText1"
-       android:ems="10" />
+       android:ems="10" 
+       android:inputType="textPassword"/>
 
    <Button
        android:id="@+id/button1"
