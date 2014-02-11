@@ -7,7 +7,7 @@
    android:paddingRight="@dimen/activity_horizontal_margin"
    android:paddingTop="@dimen/activity_vertical_margin"
    tools:context=".MainActivity"
-   android:background="#3366cc">
+   android:background="#666666">
 
    <TextView
        android:id="@+id/uname"
@@ -19,7 +19,7 @@
        android:text="@string/finance"
        android:textAppearance="?android:attr/textAppearanceLarge"
        android:textColor="#ffffff"
-       android:textStyle="italic"
+       android:textStyle="normal"
        android:typeface="serif" 
        />
 
@@ -42,7 +42,7 @@
        android:text="@string/username"
        android:textAppearance="?android:attr/textAppearanceMedium"
        android:textColor="#ffffff"
-       android:textStyle="italic"
+       android:textStyle="normal"
        android:typeface="serif" />
 
    <EditText
@@ -67,7 +67,7 @@
        android:text="@string/password"
        android:textAppearance="?android:attr/textAppearanceMedium"
        android:textColor="#ffffff"
-       android:textStyle="italic"
+       android:textStyle="normal"
        android:typeface="serif" />
 
    <EditText
@@ -88,7 +88,7 @@
        android:layout_marginTop="19dp"
        android:text="@string/login"
        android:textColor="#ffffff"
-       android:textStyle="italic"
+       android:textStyle="normal"
        android:typeface="serif"
        android:onClick="onLoginClick" />
 
@@ -102,7 +102,7 @@
        android:text="@string/register"
        android:textAppearance="?android:attr/textAppearanceSmall"
        android:textColor="#ffffff"
-       android:textStyle="italic"
+       android:textStyle="normal"
        android:typeface="serif" 
        android:onClick="onRegisterClick"/>
 
@@ -115,7 +115,7 @@
        android:layout_toLeftOf="@+id/imageButton1"
        android:text="@string/cancel"
        android:textColor="#ffffff"
-       android:textStyle="italic"
+       android:textStyle="normal"
        android:typeface="serif"
        android:onClick="onResetClick" />
 
