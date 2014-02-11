@@ -25,6 +25,7 @@ public class Tagline extends Activity {
 			TextView tvLabel = (TextView) findViewById(R.id.uname);
 			tvLabel.setText(getIntent().getStringExtra("uname") + "'s "+Constants.yourTag);
 			
+			
 		}
 	}
 
