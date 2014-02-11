@@ -29,6 +29,10 @@
             android:name="com.example.fantasyfinance.Login"
             android:label="@string/title_activity_login" >
         </activity>
+        <activity
+            android:name="com.example.fantasyfinance.Tagline"
+            android:label="@string/title_activity_tagline" >
+        </activity>
     </application>
 
 </manifest>

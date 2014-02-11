@@ -1,9 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
+        android:id="@+id/tagline"
+        android:icon="@drawable/ic_tagline"
+        android:onClick="onEditTagline"
+        android:showAsAction="always"
+        android:title="@string/tagline">
+    </item>
+    <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_logout"
         android:onClick="onLogoutAction"
         android:showAsAction="always"
         android:title="@string/logout">
     </item>
+   
 </menu>

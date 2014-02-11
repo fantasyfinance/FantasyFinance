@@ -10,7 +10,7 @@
    android:background="#3366cc">
 
    <TextView
-       android:id="@+id/textView1"
+       android:id="@+id/uname"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_alignParentTop="true"
@@ -27,7 +27,7 @@
        android:id="@+id/imageView1"
        android:layout_width="100sp"
        android:layout_height="100sp"
-       android:layout_below="@+id/textView1"
+       android:layout_below="@+id/uname"
        android:layout_centerHorizontal="true"
        android:layout_marginTop="35dp"
        android:src="@drawable/finance" />
@@ -83,7 +83,7 @@
        android:id="@+id/button1"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_alignLeft="@+id/textView1"
+       android:layout_alignLeft="@+id/uname"
        android:layout_below="@+id/TextView01"
        android:layout_marginTop="19dp"
        android:text="@string/login"
@@ -125,7 +125,7 @@
        android:layout_height="40sp"
        android:layout_alignParentBottom="true"
        android:layout_alignParentRight="true"
-       android:layout_toRightOf="@+id/textView1"
+       android:layout_toRightOf="@+id/uname"
        android:src="@android:drawable/ic_menu_help" 
        android:onClick="onForgotPassword"/>
 
