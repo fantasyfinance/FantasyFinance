@@ -1,5 +1,6 @@
 package com.example.fantasyfinance;
 
+import com.example.utils.Constants;
 import com.parse.ParseUser;
 
 import android.os.Bundle;
@@ -22,7 +23,8 @@ public class Tagline extends Activity {
 		if (currentUser!=null)
 		{
 			TextView tvLabel = (TextView) findViewById(R.id.uname);
-			tvLabel.setText(getIntent().getStringExtra("uname"));
+			tvLabel.setText(getIntent().getStringExtra("uname") + "'s "+Constants.yourTag);
+			
 		}
 	}
 
