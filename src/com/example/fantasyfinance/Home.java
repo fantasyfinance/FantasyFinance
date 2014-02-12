@@ -1,5 +1,6 @@
 package com.example.fantasyfinance;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -26,6 +27,8 @@ public class Home extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+		ActionBar actionBar = getActionBar();
+		actionBar.hide();
 	}
 
 	public void onLoginClick(View v) {

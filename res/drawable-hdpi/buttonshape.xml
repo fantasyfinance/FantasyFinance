@@ -5,14 +5,13 @@
     <corners android:radius="100dp" />
 
     <gradient
-     android:gradientRadius="100"
-android:centerX="35%"
-android:centerY="50%"
-android:centerColor="#7279D4"
-android:startColor="#E8E8E8"
-android:endColor="#000000"
-android:type="radial"
-/>
+        android:centerColor="#7279D4"
+        android:centerX="35%"
+        android:centerY="50%"
+        android:endColor="#000000"
+        android:gradientRadius="100"
+        android:startColor="#E8E8E8"
+        android:type="radial" />
 
     <size
         android:height="40dp"
