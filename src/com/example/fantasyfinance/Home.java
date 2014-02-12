@@ -75,13 +75,6 @@ public class Home extends Activity {
 				   Toast.LENGTH_LONG).show();
 		
 	}
-	
-	public void onResetClick(View v) {
-		username = (EditText) findViewById(R.id.editText1);
-		password = (EditText) findViewById(R.id.editText2);
-		username.setText("");
-		password.setText("");
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
