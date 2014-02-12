@@ -52,6 +52,7 @@
        android:layout_above="@+id/TextView01"
        android:layout_alignLeft="@+id/imageView1"
        android:layout_marginLeft="49dp"
+       
        android:ems="10" >
 
        <requestFocus />
