@@ -9,6 +9,7 @@
     <string name="password">Password</string>
     <string name="attempts">Attempts</string>
     <string name="login">Login</string>
+    <string name="update">Update</string>
     <string name="register"><u>Sign Up For Fantasy Finance!!</u></string>
     <string name="title_activity_main">MainActivity</string>
     <string name="forgot">Forgot Password!!</string>
@@ -17,5 +18,6 @@
     <string name="logout">Logout</string>
     <string name="tagline">tagline</string>
     <string name="title_activity_tagline">Tagline</string>
+    
 
 </resources>

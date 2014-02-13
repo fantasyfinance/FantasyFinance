@@ -6,28 +6,52 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Tagline" 
+    tools:context=".TaglineModel" 
     android:background="#4c66a4">
 
-    <TextView
-        android:id="@+id/uname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:text="@string/hello_world" />
+        <TextView
+            android:id="@+id/tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="44dp"
+            android:text="@string/hello_world"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textStyle="normal"
+            android:typeface="serif" />
 
-    <EditText
-        android:id="@+id/searchBox"
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/uname"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/textinputborder"
-        android:ems="10"
-        android:hint="@string/tagline"
-        android:paddingLeft="10dp" />
+        <EditText
+            android:id="@+id/tagText"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/tagline"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/textinputborder"
+            android:ems="10"
+            android:hint="@string/tagline"
+            android:inputType="textCapSentences"
+            android:paddingLeft="10dp" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tagText"
+            android:layout_alignRight="@+id/tagText"
+            android:layout_below="@+id/tagText"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="onTaglineClick"
+            android:text="@string/update"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:typeface="serif" />
 
 </RelativeLayout>
