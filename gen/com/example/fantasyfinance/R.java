@@ -27,7 +27,8 @@ public final class R {
         public static final int ic_launcher=0x7f020003;
         public static final int ic_logout=0x7f020004;
         public static final int ic_tagline=0x7f020005;
-        public static final int textinputborder=0x7f020006;
+        public static final int player_icon=0x7f020006;
+        public static final int textinputborder=0x7f020007;
     }
     public static final class id {
         public static final int action_settings=0x7f08000f;
@@ -51,13 +52,15 @@ public final class R {
     public static final class layout {
         public static final int activity_home=0x7f030000;
         public static final int activity_login=0x7f030001;
-        public static final int activity_tagline=0x7f030002;
+        public static final int activity_register=0x7f030002;
+        public static final int activity_tagline=0x7f030003;
     }
     public static final class menu {
         public static final int home=0x7f070000;
         public static final int login=0x7f070001;
         public static final int main=0x7f070002;
-        public static final int tagline=0x7f070003;
+        public static final int register=0x7f070003;
+        public static final int tagline=0x7f070004;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -74,6 +77,7 @@ public final class R {
         public static final int tagline=0x7f05000f;
         public static final int title_activity_login=0x7f05000d;
         public static final int title_activity_main=0x7f05000a;
+        public static final int title_activity_register=0x7f050011;
         public static final int title_activity_tagline=0x7f050010;
         public static final int update=0x7f050008;
         public static final int username=0x7f050004;

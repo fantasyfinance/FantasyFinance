@@ -69,13 +69,13 @@ public class Home extends Activity {
 	}
 	
 	public void onRegisterClick(View v) {
-		Toast.makeText(getApplicationContext(), "Clicked Register !!!", 
-				   Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(), "Clicked Register !!!",Toast.LENGTH_LONG).show();
+		Intent i = new Intent(getApplicationContext(),Register.class);
+		startActivity(i);
 	}
 
 	public void onForgotPassword(View v) {
-		Toast.makeText(getApplicationContext(), "Clicked Forgot !!!", 
-				   Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "Clicked Forgot !!!", Toast.LENGTH_LONG).show();
 		
 	}
 

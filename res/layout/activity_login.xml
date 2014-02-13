@@ -23,14 +23,17 @@
             android:layout_alignParentTop="true"
             android:id="@+id/userivProfileImage"
             android:layout_marginRight="10dp"
-            android:src="@android:drawable/screen_background_light_transparent"/>
+            android:src="@drawable/player_icon"/>
         <TextView
             android:id="@+id/usertvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/userivProfileImage"
             android:text="Name"
-            android:textSize="16sp"/>
+            android:textColor="#ffffff"
+            android:textStyle="normal"
+            android:typeface="serif"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
         <TextView
             android:id="@+id/usertvTagline"
             android:layout_width="wrap_content"
@@ -38,7 +41,10 @@
             android:layout_alignLeft="@id/usertvName"
             android:layout_below="@id/usertvName"
             android:text="Tagline"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:textStyle="normal"
+            android:typeface="serif"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -52,12 +58,20 @@
             android:id="@+id/usergroups"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Group Play : 5"/>
+            android:text="Group Play : 5"
+            android:textColor="#ffffff"
+            android:textStyle="normal"
+            android:typeface="serif"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
         <TextView
             android:id="@+id/usersingles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="Single Play : 1"/>
+            android:text="Single Play : 1"
+            android:textColor="#ffffff"
+            android:textStyle="normal"
+            android:typeface="serif"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
     </LinearLayout>
 </RelativeLayout>

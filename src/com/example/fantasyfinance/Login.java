@@ -1,5 +1,7 @@
 package com.example.fantasyfinance;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -9,8 +11,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.utils.Constants;
+import com.parse.FindCallback;
+import com.parse.GetCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 public class Login extends Activity {
@@ -23,6 +33,43 @@ public class Login extends Activity {
 		setContentView(R.layout.activity_login);
 		TextView tvLabel = (TextView) findViewById(R.id.usertvName);
 		tvLabel.setText(getIntent().getStringExtra("username"));
+		
+		setTag(getIntent().getStringExtra("username"));
+		
+	}
+
+	private void setTag(String username) {
+		
+		Parse.initialize(this, Constants.APPLICATION_KEY,
+				Constants.APPLICATION_KEY_TOKEN);
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("TaglineModel");
+		query.whereEqualTo("user", username);
+		query.findInBackground(new FindCallback<ParseObject>() 
+		{
+			public void done(List<ParseObject> tags, ParseException e) 
+			{
+				if (tags.size() == 1 && e == null) {
+					String objectID = tags.get(0).getObjectId();
+					
+					ParseQuery<ParseObject> query = ParseQuery.getQuery("TaglineModel");
+					query.getInBackground(objectID,new GetCallback<ParseObject>() 
+							{
+								public void done(ParseObject taglineObject,ParseException e) 
+								{
+									if (e == null) {
+										String tag = taglineObject.get("tag").toString();
+										TextView tagView = (TextView) findViewById(R.id.usertvTagline);
+										tagView.setText(tag);
+									}
+								}
+							});
+				} 
+				else 
+				{
+					Log.d("DEBUG", "Error: " + e.getMessage());
+				}
+			}
+		});
 	}
 
 	public void onLogoutAction(MenuItem mi) {
