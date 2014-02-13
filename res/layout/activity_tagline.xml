@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Tagline" 
-    android:background="#666666">
+    android:background="#4c66a4">
 
     <TextView
         android:id="@+id/uname"
