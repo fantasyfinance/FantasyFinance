@@ -19,5 +19,6 @@
     <string name="tagline">tagline</string>
     <string name="title_activity_tagline">Tagline</string>
     <string name="title_activity_register">Register</string>
+    <string name="email">Email</string>
 
 </resources>

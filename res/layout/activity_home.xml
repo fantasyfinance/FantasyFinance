@@ -42,7 +42,8 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:paddingLeft="10dp" />
+        android:paddingLeft="10dp"
+        android:textColorHint="#FFFFFF" />
 
     <EditText
         android:id="@+id/editText1"
@@ -54,7 +55,8 @@
         android:background="@drawable/textinputborder"
         android:ems="10"
         android:hint="@string/username"
-        android:paddingLeft="10dp" />
+        android:paddingLeft="10dp"
+        android:textColorHint="#FFFFFF" />
 
     <Button
         android:id="@+id/button1"
