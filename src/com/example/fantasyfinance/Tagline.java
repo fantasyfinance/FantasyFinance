@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.example.utils.Constants;
 import com.parse.FindCallback;
 import com.parse.GetCallback;

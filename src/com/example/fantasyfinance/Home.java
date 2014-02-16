@@ -75,7 +75,9 @@ public class Home extends Activity {
 	}
 
 	public void onForgotPassword(View v) {
-		Toast.makeText(getApplicationContext(), "Clicked Forgot !!!", Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(), "Clicked Forgot !!!", Toast.LENGTH_LONG).show();
+		Intent i = new Intent(getApplicationContext(),ForgotPassword.class);
+		startActivity(i);
 		
 	}
 

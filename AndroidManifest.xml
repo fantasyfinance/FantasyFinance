@@ -37,6 +37,10 @@
             android:name="com.example.fantasyfinance.Register"
             android:label="@string/title_activity_register" >
         </activity>
+        <activity
+            android:name="com.example.fantasyfinance.ForgotPassword"
+            android:label="@string/title_activity_forgot_password" >
+        </activity>
     </application>
 
 </manifest>
