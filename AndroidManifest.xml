@@ -41,6 +41,22 @@
             android:name="com.example.fantasyfinance.ForgotPassword"
             android:label="@string/title_activity_forgot_password" >
         </activity>
+        <activity
+            android:name="com.example.fantasyfinance.ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name="com.example.fantasyfinance.FollowedStocks"
+            android:label="@string/title_activity_followed_stocks" >
+        </activity>
+        <activity
+            android:name="com.example.fantasyfinance.SearchStocks"
+            android:label="@string/title_activity_search_stocks" >
+        </activity>
+        <activity
+            android:name="com.example.fantasyfinance.PredictStocks"
+            android:label="@string/title_activity_predict_stocks" >
+        </activity>
     </application>
 
 </manifest>

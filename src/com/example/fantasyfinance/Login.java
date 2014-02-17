@@ -1,74 +1,84 @@
 package com.example.fantasyfinance;
 
-import java.util.List;
-
-import android.app.Activity;
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-import com.example.utils.Constants;
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.Parse;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
+import com.example.adapters.TabsPagerAdapter;
 import com.parse.ParseUser;
 
-public class Login extends Activity {
+public class Login extends FragmentActivity implements ActionBar.TabListener{
 
 	ParseUser currentUser;
 	final Context context = this;
+	
+	private ViewPager viewPager;
+	private TabsPagerAdapter mAdapter;
+	private ActionBar actionBar;
+	// Tab titles
+	private String[] tabs = { "My Profile", "Stocks", "Search","Predict"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-		TextView tvLabel = (TextView) findViewById(R.id.usertvName);
-		tvLabel.setText(getIntent().getStringExtra("username"));
-		
-		setTag(getIntent().getStringExtra("username"));
+		viewPager = (ViewPager) findViewById(R.id.pager);
+		actionBar = getActionBar();
+		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+
+		viewPager.setAdapter(mAdapter);
+		actionBar.setHomeButtonEnabled(false);
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+		// Adding Tabs
+		for (String tab_name : tabs) {
+			actionBar.addTab(actionBar.newTab().setText(tab_name)
+					.setTabListener(this));
+		}
+
+		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+			 
+            @Override
+            public void onPageSelected(int position) {
+                // on changing the page
+                // make respected tab selected
+                actionBar.setSelectedNavigationItem(position);
+            }
+ 
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+            }
+ 
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+            }
+        });
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
 		
 	}
 
-	private void setTag(String username) {
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		viewPager.setCurrentItem(tab.getPosition());
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
 		
-		Parse.initialize(this, Constants.APPLICATION_KEY,
-				Constants.APPLICATION_KEY_TOKEN);
-		ParseQuery<ParseObject> query = ParseQuery.getQuery("TaglineModel");
-		query.whereEqualTo("user", username);
-		query.findInBackground(new FindCallback<ParseObject>() 
-		{
-			public void done(List<ParseObject> tags, ParseException e) 
-			{
-				if (tags.size() == 1 && e == null) {
-					String objectID = tags.get(0).getObjectId();
-					
-					ParseQuery<ParseObject> query = ParseQuery.getQuery("TaglineModel");
-					query.getInBackground(objectID,new GetCallback<ParseObject>() 
-							{
-								public void done(ParseObject taglineObject,ParseException e) 
-								{
-									if (e == null) {
-										String tag = taglineObject.get("tag").toString();
-										TextView tagView = (TextView) findViewById(R.id.usertvTagline);
-										tagView.setText(tag);
-									}
-								}
-							});
-				} 
-				else 
-				{
-					Log.d("DEBUG", "Error: " + e.getMessage());
-				}
-			}
-		});
 	}
 
 	public void onLogoutAction(MenuItem mi) {

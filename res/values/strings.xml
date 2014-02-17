@@ -22,5 +22,9 @@
     <string name="title_activity_register">Register</string>
     <string name="email">Email</string>
     <string name="title_activity_forgot_password">ForgotPassword</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_followed_stocks">FollowedStocks</string>
+    <string name="title_activity_search_stocks">SearchStocks</string>
+    <string name="title_activity_predict_stocks">PredictStocks</string>
 
 </resources>
