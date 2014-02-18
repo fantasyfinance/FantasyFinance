@@ -10,6 +10,7 @@
     <string name="password">Password</string>
     <string name="attempts">Attempts</string>
     <string name="login">Login</string>
+    <string name="companyName">Company Name</string>
     <string name="update">Update</string>
     <string name="register"><u>Sign Up For Fantasy Finance!!</u></string>
     <string name="title_activity_main">MainActivity</string>
