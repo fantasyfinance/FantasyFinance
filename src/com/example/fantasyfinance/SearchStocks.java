@@ -38,6 +38,7 @@ public class SearchStocks extends Fragment {
 
 	final Context context = getActivity();
 	List<String> array_sort = new ArrayList<String>();
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class SearchStocks extends Fragment {
 		View rootView = inflater.inflate(R.layout.activity_search_stocks,
 				container, false);
 		currentUser = ParseUser.getCurrentUser();
-		
+
 		if (currentUser != null) {
 			Bundle b = getActivity().getIntent().getExtras();
 			username = b.getString("username");
@@ -62,17 +63,23 @@ public class SearchStocks extends Fragment {
 		lv = (ListView) getActivity().findViewById(R.id.listView1);
 		lv.setAdapter(new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_list_item_1, Constants.companies));
-		
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+		currentUser = ParseUser.getCurrentUser();
+		if (currentUser != null) {
+			lv.setOnItemClickListener(new OnItemClickListener() {
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
 
-				// selected item
-				String selectedFromList = (String) (lv.getItemAtPosition(position));
-				Toast.makeText(getActivity().getApplicationContext(),selectedFromList, Toast.LENGTH_LONG).show();
-			}
-		});
-		
+					// selected item
+					String selectedFromList = (String) (lv
+							.getItemAtPosition(position));
+					Toast.makeText(getActivity().getApplicationContext(),
+							selectedFromList, Toast.LENGTH_LONG).show();
+				}
+			});
+		} else {
+			Intent intent = new Intent(getActivity(), Home.class);
+			startActivity(intent);
+		}
 		inputSearch = (EditText) getActivity().findViewById(R.id.searchStock);
 		inputSearch.addTextChangedListener(new TextWatcher() {
 
@@ -80,17 +87,16 @@ public class SearchStocks extends Fragment {
 			public void onTextChanged(CharSequence cs, int arg1, int arg2,
 					int arg3) {
 				// When user changed the Text
-				
+
 				array_sort.clear();
-				
-				for (int i = 0; i < Constants.companies.length; i++)
-				{
-					if(Constants.companies[i].toString().contains(inputSearch.getText().toString()))
-					{
+				for (int i = 0; i < Constants.companies.length; i++) {
+					if (Constants.companies[i].toString().contains(
+							inputSearch.getText().toString())) {
 						array_sort.add(Constants.companies[i].toString());
 					}
 				}
-				lv.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1, array_sort));
+				lv.setAdapter(new ArrayAdapter<String>(getActivity(),
+						android.R.layout.simple_list_item_1, array_sort));
 			}
 
 			@Override

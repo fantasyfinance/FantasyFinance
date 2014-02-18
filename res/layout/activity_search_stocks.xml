@@ -32,7 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/searchStock"
-        android:layout_below="@+id/searchStock" >
+        android:layout_below="@+id/searchStock" 
+        android:textColor="#ffffff">
     </ListView>
 
 </RelativeLayout>
