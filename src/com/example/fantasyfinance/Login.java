@@ -87,6 +87,7 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 		invalidateOptionsMenu();
 		Intent logout = new Intent(getApplicationContext(), Home.class);
 		startActivity(logout);
+		Login.this.finish();
 	}
 
 	public void onEditTagline(MenuItem mi) {
