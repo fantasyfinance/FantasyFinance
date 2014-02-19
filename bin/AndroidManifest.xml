@@ -51,12 +51,16 @@
         </activity>
         <activity
             android:name="com.example.fantasyfinance.SearchStocks"
-            android:label="@string/title_activity_search_stocks" 
-            android:windowSoftInputMode="stateHidden">
+            android:label="@string/title_activity_search_stocks"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.example.fantasyfinance.PredictStocks"
             android:label="@string/title_activity_predict_stocks" >
+        </activity>
+        <activity
+            android:name="com.example.fantasyfinance.StockInfo"
+            android:label="@string/title_activity_stock_info" >
         </activity>
     </application>
 

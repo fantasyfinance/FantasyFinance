@@ -27,5 +27,6 @@
     <string name="title_activity_followed_stocks">FollowedStocks</string>
     <string name="title_activity_search_stocks">SearchStocks</string>
     <string name="title_activity_predict_stocks">PredictStocks</string>
+    <string name="title_activity_stock_info">StockInfo</string>
 
 </resources>

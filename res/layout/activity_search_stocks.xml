@@ -33,7 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/searchStock"
         android:layout_below="@+id/searchStock" 
-        android:textColor="#ffffff">
+        android:textColor="#ffffff"
+   		android:listSelector="@drawable/states_selector_list">
     </ListView>
 
 </RelativeLayout>

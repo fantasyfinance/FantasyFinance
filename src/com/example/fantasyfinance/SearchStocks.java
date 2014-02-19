@@ -72,8 +72,11 @@ public class SearchStocks extends Fragment {
 					// selected item
 					String selectedFromList = (String) (lv
 							.getItemAtPosition(position));
-					Toast.makeText(getActivity().getApplicationContext(),
-							selectedFromList, Toast.LENGTH_LONG).show();
+					//Toast.makeText(getActivity().getApplicationContext(),selectedFromList, Toast.LENGTH_LONG).show();
+					Intent intent = new Intent(getActivity(), StockInfo.class);
+					intent.putExtra("username",currentUser.getUsername().toString());
+					intent.putExtra("selectedStock",selectedFromList);
+					startActivity(intent);
 				}
 			});
 		} else {
