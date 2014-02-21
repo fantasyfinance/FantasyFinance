@@ -57,7 +57,7 @@ public class Home extends Activity {
 									// current activity
 									
 								}
-							  });
+							  } );
 						AlertDialog alertDialog = alertDialogBuilder.create();
 						alertDialog.show();
                 }
