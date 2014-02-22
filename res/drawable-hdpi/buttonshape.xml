@@ -9,7 +9,7 @@
         android:centerX="35%"
         android:centerY="50%"
         android:endColor="#000000"
-        android:gradientRadius="100"
+        android:gradientRadius="300"
         android:startColor="#E8E8E8"
         android:type="radial" />
 
@@ -17,8 +17,6 @@
         android:height="40dp"
         android:width="100dp" />
 
-    <stroke
-        android:width="2.5dp"
-        android:color="#FFFFFF" />
+    
 
 </shape>
