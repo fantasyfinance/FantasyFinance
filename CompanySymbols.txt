@@ -1,6 +1,3 @@
-Symbol
-AAIT
-AAL
 AALCP
 AAME
 AAOI

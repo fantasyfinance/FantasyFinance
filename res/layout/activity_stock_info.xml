@@ -101,22 +101,37 @@
         android:textStyle="normal"
         android:typeface="serif" />
 
-    <ImageButton
-        android:id="@+id/upButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_above="@+id/beforeHoursValue"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/old_go_top"
-        android:background="#4c66a4" />
+        android:layout_alignLeft="@+id/realTimeValue"
+        android:layout_alignRight="@+id/realTimeValue"
+        android:background="@drawable/buttonshape"
+        android:onClick="onStatusClick"
+        android:text="@string/status"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:typeface="serif" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/upButton"
-        android:src="@drawable/old_go_bottom"
-        android:background="#4c66a4" />
+        android:layout_above="@+id/button1"
+        android:layout_alignRight="@+id/imageView1"
+        android:background="#4c66a4"
+        android:src="@drawable/old_go_bottom" />
+
+    <ImageButton
+        android:id="@+id/upButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_alignLeft="@+id/imageView1"
+        android:background="#4c66a4"
+        android:src="@drawable/old_go_top" />
 
 </RelativeLayout>

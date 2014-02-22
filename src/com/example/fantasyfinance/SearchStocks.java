@@ -18,7 +18,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.utils.Constants;
 import com.parse.ParseUser;
@@ -70,12 +69,14 @@ public class SearchStocks extends Fragment {
 						int position, long id) {
 
 					// selected item
-					String selectedFromList = (String) (lv
-							.getItemAtPosition(position));
-					//Toast.makeText(getActivity().getApplicationContext(),selectedFromList, Toast.LENGTH_LONG).show();
+					//String selectedFromList = (String) (lv.getItemAtPosition(position));
+					//Toast.makeText(getActivity().getApplicationContext(),position, Toast.LENGTH_LONG).show();
+					Log.d("DEBUG",position+"");
 					Intent intent = new Intent(getActivity(), StockInfo.class);
 					intent.putExtra("username",currentUser.getUsername().toString());
-					intent.putExtra("selectedStock",selectedFromList);
+					intent.putExtra("index", position);
+					String selectedSymbol=Constants.symbols[position];
+					intent.putExtra("selectedStock",selectedSymbol);
 					startActivity(intent);
 				}
 			});
