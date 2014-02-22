@@ -1,6 +1,7 @@
 package com.example.fantasyfinance;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import android.content.Context;
@@ -69,13 +70,14 @@ public class SearchStocks extends Fragment {
 						int position, long id) {
 
 					// selected item
-					//String selectedFromList = (String) (lv.getItemAtPosition(position));
+					String selectedFromList = (String) (lv.getItemAtPosition(position));
 					//Toast.makeText(getActivity().getApplicationContext(),position, Toast.LENGTH_LONG).show();
-					Log.d("DEBUG",position+"");
+					int index = Arrays.asList(Constants.companies).indexOf(selectedFromList);
+					Log.d("DEBUG",index+"");
 					Intent intent = new Intent(getActivity(), StockInfo.class);
 					intent.putExtra("username",currentUser.getUsername().toString());
-					intent.putExtra("index", position);
-					String selectedSymbol=Constants.symbols[position];
+					intent.putExtra("index", index);
+					String selectedSymbol=Constants.symbols[index];
 					intent.putExtra("selectedStock",selectedSymbol);
 					startActivity(intent);
 				}
