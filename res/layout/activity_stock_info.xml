@@ -49,7 +49,8 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/userrlHeader"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/yearlyHigh"
         android:src="@drawable/sample" />
 
@@ -61,7 +62,7 @@
         android:layout_centerHorizontal="true"
         android:text="Real Time Value : 38.26"
         android:textColor="#ffffff"
-        android:textSize="12sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="normal"
         android:typeface="serif" />
 
@@ -72,7 +73,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Yahoo! Inc. (YHOO)"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff"
         android:textStyle="normal"
         android:typeface="serif" />
@@ -101,27 +102,12 @@
         android:textStyle="normal"
         android:typeface="serif" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/beforeHoursValue"
-        android:layout_alignLeft="@+id/realTimeValue"
-        android:layout_alignRight="@+id/realTimeValue"
-        android:background="@drawable/buttonshape"
-        android:onClick="onStatusClick"
-        android:text="@string/status"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        android:typeface="serif" />
-
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_alignRight="@+id/imageView1"
+        android:layout_above="@+id/beforeHoursValue"
+        android:layout_alignParentRight="true"
         android:background="#4c66a4"
         android:src="@drawable/old_go_bottom" />
 
@@ -129,9 +115,24 @@
         android:id="@+id/upButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_alignLeft="@+id/imageView1"
+        android:layout_above="@+id/beforeHoursValue"
+        android:layout_alignParentLeft="true"
         android:background="#4c66a4"
         android:src="@drawable/old_go_top" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/imageButton2"
+        android:layout_toLeftOf="@+id/imageButton2"
+        android:layout_toRightOf="@+id/upButton"
+        android:background="@drawable/buttonshape"
+        android:onClick="onStatusClick"
+        android:text="@string/status"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:typeface="serif" />
 
 </RelativeLayout>
