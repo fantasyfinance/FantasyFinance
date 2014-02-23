@@ -20,7 +20,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff"
         android:textStyle="normal"
-        android:typeface="serif" />
+     />
 
     <ImageButton
         android:id="@+id/imageButton1"
