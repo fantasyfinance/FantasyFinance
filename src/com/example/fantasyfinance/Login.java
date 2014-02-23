@@ -96,6 +96,7 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 			Intent editTag = new Intent(getApplicationContext(), Tagline.class);
 			editTag.putExtra("uname", currentUser.getUsername().toString());
 			startActivity(editTag);
+			overridePendingTransition(R.anim.left_out, R.anim.right_in);
 		} else {
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 					context);
@@ -109,6 +110,7 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 										int id) {
 									Intent logout = new Intent(getApplicationContext(), Home.class);
 									startActivity(logout);
+									overridePendingTransition(R.anim.left_out, R.anim.right_in);
 								}
 							});
 			AlertDialog alertDialog = alertDialogBuilder.create();

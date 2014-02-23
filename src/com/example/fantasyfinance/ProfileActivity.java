@@ -45,6 +45,7 @@ public class ProfileActivity extends Fragment {
 			Intent intent = new Intent(getActivity(), Home.class);
 			startActivity(intent);
 			
+			
 		}
 		return rootView;
 	}

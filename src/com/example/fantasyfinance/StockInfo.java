@@ -100,6 +100,7 @@ public class StockInfo extends Activity {
 			intent.putExtra("username",username);
 			intent.putExtra("stock", stock);
 			startActivity(intent);
+			overridePendingTransition(R.anim.left_out, R.anim.right_in);
 			
 		} else {
 			Log.d("DEBUG","UnFollow");
@@ -136,6 +137,7 @@ public class StockInfo extends Activity {
 			intent.putExtra("username",username);
 			intent.putExtra("stock", stock);
 			startActivity(intent);
+			overridePendingTransition(R.anim.left_out, R.anim.right_in);
 		}
 	}
 

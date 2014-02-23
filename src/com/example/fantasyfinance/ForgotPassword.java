@@ -47,6 +47,7 @@ public class ForgotPassword extends Activity {
 									public void onClick(DialogInterface dialog,int id) {
 										Intent logout = new Intent(getApplicationContext(), Home.class);
 										startActivity(logout);
+										overridePendingTransition(R.anim.left_out, R.anim.right_in);
 									}
 								  });
 							AlertDialog alertDialog = alertDialogBuilder.create();

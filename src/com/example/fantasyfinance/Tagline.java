@@ -77,6 +77,7 @@ public class Tagline extends Activity {
 											Intent login = new Intent(getApplicationContext(), Login.class);
 											login.putExtra("username",currentUser.getUsername());
 											startActivity(login);
+											overridePendingTransition(R.anim.left_out, R.anim.right_in);
 										}
 									}
 								});

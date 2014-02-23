@@ -31,7 +31,7 @@ public class PredictStocks extends Fragment {
 		} else {
 			Intent intent = new Intent(getActivity(), Home.class);
 			startActivity(intent);
-			
+						
 		}
         return rootView;
     }
