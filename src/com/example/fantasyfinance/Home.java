@@ -46,6 +46,7 @@ public class Home extends Activity {
 					i.putExtra("username",username.getText().toString() );
 					i.putExtra("password", password.getText().toString());
 					startActivity(i);
+					overridePendingTransition(R.anim.left_out, R.anim.right_in);
 					
 				} else {
 					AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
@@ -71,12 +72,14 @@ public class Home extends Activity {
 		//Toast.makeText(getApplicationContext(), "Clicked Register !!!",Toast.LENGTH_LONG).show();
 		Intent i = new Intent(getApplicationContext(),Register.class);
 		startActivity(i);
+		overridePendingTransition(R.anim.left_out, R.anim.right_in);
 	}
 
 	public void onForgotPassword(View v) {
 		//Toast.makeText(getApplicationContext(), "Clicked Forgot !!!", Toast.LENGTH_LONG).show();
 		Intent i = new Intent(getApplicationContext(),ForgotPassword.class);
 		startActivity(i);
+		overridePendingTransition(R.anim.left_out, R.anim.right_in);
 		
 	}
 
