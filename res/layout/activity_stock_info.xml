@@ -97,13 +97,9 @@
         android:layout_alignTop="@+id/imageButton2"
         android:layout_toLeftOf="@+id/imageButton2"
         android:layout_toRightOf="@+id/upButton"
-        android:background="@drawable/buttonshape"
         android:onClick="onStatusClick"
         android:text="@string/status"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        android:typeface="serif" />
+        style="@style/button_gradient"/>
         
     <TextView
         android:id="@+id/selectedStock"

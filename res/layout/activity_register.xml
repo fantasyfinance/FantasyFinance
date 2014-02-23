@@ -21,7 +21,7 @@
         android:hint="@string/password"
         android:paddingLeft="10dp" 
         android:inputType="textPassword"
-        android:textColorHint="#FFFFFF"/>
+        android:textColorHint="#C6C6C6"/>
     
     <EditText
         android:id="@+id/emailID"
@@ -35,7 +35,7 @@
         android:hint="@string/email"
         android:paddingLeft="10dp" 
         android:inputType="textEmailAddress"
-        android:textColorHint="#FFFFFF"/>
+        android:textColorHint="#C6C6C6"/>
 
     <EditText
         android:id="@+id/registerUsername"
@@ -48,7 +48,7 @@
         android:ems="10"
         android:hint="@string/username"
         android:paddingLeft="10dp" 
-        android:textColorHint="#FFFFFF"/>
+        android:textColorHint="#C6C6C6"/>
 
        <Button
         android:id="@+id/button1"
@@ -58,11 +58,7 @@
         android:layout_alignRight="@+id/emailID"
         android:layout_below="@+id/emailID"
         android:layout_marginTop="18dp"
-        android:background="@drawable/buttonshape"
         android:onClick="onRegisterClick"
-        android:text="@string/login"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        android:typeface="serif" />
+        android:text="@string/title_activity_register"
+        style="@style/button_gradient" />
 </RelativeLayout>

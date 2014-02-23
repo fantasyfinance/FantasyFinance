@@ -21,45 +21,29 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-<<<<<<< HEAD
-        public static final int buttonshape=0x7f020000;
-        public static final int finance=0x7f020001;
-        public static final int gradient_bg=0x7f020002;
-        public static final int gradient_bg1=0x7f020003;
-        public static final int gradient_bg_hover=0x7f020004;
-        public static final int gradient_pressed_bg=0x7f020005;
-        public static final int ic_delete_bin=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int ic_logout=0x7f020008;
-        public static final int ic_tagline=0x7f020009;
-        public static final int image_bg=0x7f02000a;
-        public static final int list_border=0x7f02000b;
-        public static final int list_selector=0x7f02000c;
-        public static final int old_go_bottom=0x7f02000d;
-        public static final int old_go_top=0x7f02000e;
-        public static final int player_icon=0x7f02000f;
-        public static final int sample=0x7f020010;
-=======
         public static final int button_enabled=0x7f020000;
         public static final int button_focused=0x7f020001;
         public static final int button_pressed_done=0x7f020002;
         public static final int buttonshape=0x7f020003;
         public static final int finance=0x7f020004;
         public static final int gradient_bg=0x7f020005;
-        public static final int gradient_pressed_bg=0x7f020006;
-        public static final int ic_delete_bin=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int ic_logout=0x7f020009;
-        public static final int ic_tagline=0x7f02000a;
-        public static final int list_border=0x7f02000b;
-        public static final int old_go_bottom=0x7f02000c;
-        public static final int old_go_top=0x7f02000d;
-        public static final int player_icon=0x7f02000e;
-        public static final int sample=0x7f02000f;
-        public static final int states_button=0x7f020010;
->>>>>>> bf23ad31a7eb13bc8035b80c0c6e83d829ab718a
-        public static final int states_selector_list=0x7f020011;
-        public static final int textinputborder=0x7f020012;
+        public static final int gradient_bg1=0x7f020006;
+        public static final int gradient_bg_hover=0x7f020007;
+        public static final int gradient_pressed_bg=0x7f020008;
+        public static final int ic_delete_bin=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int ic_logout=0x7f02000b;
+        public static final int ic_tagline=0x7f02000c;
+        public static final int image_bg=0x7f02000d;
+        public static final int list_border=0x7f02000e;
+        public static final int list_selector=0x7f02000f;
+        public static final int old_go_bottom=0x7f020010;
+        public static final int old_go_top=0x7f020011;
+        public static final int player_icon=0x7f020012;
+        public static final int sample=0x7f020013;
+        public static final int states_button=0x7f020014;
+        public static final int states_selector_list=0x7f020015;
+        public static final int textinputborder=0x7f020016;
     }
     public static final class id {
         public static final int action_settings=0x7f080022;
