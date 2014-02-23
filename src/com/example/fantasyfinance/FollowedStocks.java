@@ -14,8 +14,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.adapters.LazyAdapter;
 import com.example.utils.Constants;
@@ -86,7 +89,6 @@ public class FollowedStocks extends Fragment {
 											int index = Arrays.asList(Constants.symbols).indexOf(company);
 											String companyName =Constants.companies[index];
 											map.put(Constants.KEY_NAME, companyName);
-											
 											map.put(Constants.KEY_VALUE, Integer.toString(share));
 											share ++;
 											savedActivity.add(map);
@@ -107,6 +109,20 @@ public class FollowedStocks extends Fragment {
         
 		adapter=new LazyAdapter(getActivity(), savedActivity);        
         lv.setAdapter(adapter);
-		
+        currentUser = ParseUser.getCurrentUser();
+		if (currentUser != null) {
+			lv.setOnItemClickListener(new OnItemClickListener() {
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+					String companySymbol =(String) ((TextView) view.findViewById(R.id.stockSymbol)).getText();
+					username = currentUser.getUsername();
+					Intent intent = new Intent(getActivity(), StockInfo.class);
+					intent.putExtra("username",username);
+					intent.putExtra("selectedStock",companySymbol);
+					startActivity(intent);
+					
+				}
+			});
+		}
 	}
 }
