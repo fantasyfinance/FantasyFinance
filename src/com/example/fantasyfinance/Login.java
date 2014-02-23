@@ -20,7 +20,7 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 
 	ParseUser currentUser;
 	final Context context = this;
-	
+
 	private ViewPager viewPager;
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
@@ -45,7 +45,7 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 		}
 
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-			 
+
             @Override
             public void onPageSelected(int position) {
                 // on changing the page
@@ -66,7 +66,7 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void onLogoutAction(MenuItem mi) {
