@@ -43,7 +43,7 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:textColorHint="#FFFFFF" />
+        android:textColorHint="#C6C6C6" />
 
     <EditText
         android:id="@+id/editText1"
@@ -56,7 +56,7 @@
         android:ems="10"
         android:hint="@string/username"
         android:paddingLeft="10dp"
-        android:textColorHint="#FFFFFF" />
+        android:textColorHint="#C6C6C6" />
 
     <Button
         android:id="@+id/button1"
@@ -66,13 +66,9 @@
         android:layout_alignRight="@+id/editText2"
         android:layout_below="@+id/editText2"
         android:layout_marginTop="18dp"
-        android:background="@drawable/buttonshape"
         android:onClick="onLoginClick"
         android:text="@string/login"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        android:typeface="serif" />
+        style="@style/button_gradient"/>
     
     <ImageView
         android:id="@+id/imageView1"

@@ -16,5 +16,16 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="button_gradient" parent="@android:style/Widget.Button">
+    	<item name="android:gravity">center_vertical|center_horizontal</item>
+    	<item name="android:textColor">#FFFFFF</item>
+    	<item name="android:background">@drawable/states_button</item>
+    	<item name="android:textSize">20sp</item>
+    	<item name="android:textStyle">bold</item>
+    	<item name="android:focusable">true</item>
+    	<item name="android:clickable">true</item>
+    	<item name="android:typeface">serif</item>
+	</style>
 
 </resources>
