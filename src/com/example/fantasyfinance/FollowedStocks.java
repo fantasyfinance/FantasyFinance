@@ -1,7 +1,11 @@
 package com.example.fantasyfinance;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,9 +15,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.adapters.LazyAdapter;
 import com.example.utils.Constants;
+import com.parse.FindCallback;
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 public class FollowedStocks extends Fragment {
@@ -23,6 +33,10 @@ public class FollowedStocks extends Fragment {
 	final Context context = getActivity();
 	public ListView lv;
     LazyAdapter adapter;
+    final Set<String> companies = new HashSet<String>();
+    final ArrayList<String> symbols = new ArrayList<String>();
+    final ArrayList<String> stocks  = new ArrayList<String>();
+    int share = 50;
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -44,24 +58,53 @@ public class FollowedStocks extends Fragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		lv = (ListView) getActivity().findViewById(R.id.list);
-		ArrayList<HashMap<String, String>> savedActivity = new ArrayList<HashMap<String, String>>();
-		
-		final String companies[] = {"American Airlines Group, Inc. ","Atlantic American Corporation ","Applied Optoelectronics, Inc. ","AAON, Inc. ","Apple Inc. "};
-		final String symbols[] = {"AALCP","AAME","AAOI","AAON","AAPL"};
-		final String stocks[] = {"38","39","40","41","42"};
-		// looping through all song nodes <song>
-		for (int i = 0; i < 5; i++) {
-			// creating new HashMap
-			HashMap<String, String> map = new HashMap<String, String>();
-			// adding each child node to HashMap key => value
-			map.put(Constants.KEY_NAME, companies[i]);
-			map.put(Constants.KEY_SYMBOL,symbols[i] );
-			map.put(Constants.KEY_VALUE,stocks[i]);
-
-			// adding HashList to ArrayList
-			savedActivity.add(map);
-		}
-		
+		final ArrayList<HashMap<String, String>> savedActivity = new ArrayList<HashMap<String, String>>();
+		Bundle b = getActivity().getIntent().getExtras();
+		username = b.getString("username");
+		ParseQuery<ParseObject> query = ParseQuery
+				.getQuery("UserStockPreference");
+		query.whereEqualTo("user", username);
+		query.findInBackground(new FindCallback<ParseObject>() {
+			public void done(List<ParseObject> records, ParseException e) 
+			{
+				if (records.size() > 0 && e == null) 
+				{
+					int size = records.size();
+					for(int i = 0 ;i < size ; i++)
+					{
+						String id = records.get(i).getObjectId();
+						ParseQuery<ParseObject> query = ParseQuery.getQuery("UserStockPreference");
+						query.getInBackground(id,new GetCallback<ParseObject>() 
+						{
+									public void done(ParseObject followObject,ParseException e) 
+									{
+										if (e == null) {
+											String company = followObject.get("stock").toString();
+											companies.add(company);
+											HashMap<String, String> map = new HashMap<String, String>();
+											map.put(Constants.KEY_SYMBOL,company);
+											int index = Arrays.asList(Constants.symbols).indexOf(company);
+											String companyName =Constants.companies[index];
+											map.put(Constants.KEY_NAME, companyName);
+											
+											map.put(Constants.KEY_VALUE, Integer.toString(share));
+											share ++;
+											savedActivity.add(map);
+										}
+									}
+						});
+					}
+				} 
+				else if (e != null) {
+				} 
+				else if (records.size() == 0 && e == null) {
+					// so write the code for submit follow button
+					TextView tv = (TextView)getActivity().findViewById(R.id.followed_username);
+					tv.setText("No Stocks are Followed!!!");
+				}
+			}
+		});
+        
 		adapter=new LazyAdapter(getActivity(), savedActivity);        
         lv.setAdapter(adapter);
 		

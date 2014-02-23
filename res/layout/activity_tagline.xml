@@ -33,7 +33,8 @@
             android:ems="10"
             android:hint="@string/tagline"
             android:inputType="textCapSentences"
-            android:paddingLeft="10dp" >
+            android:paddingLeft="10dp"
+            android:textColorHint="#C6C6C6" >
 
             <requestFocus />
         </EditText>
@@ -46,12 +47,8 @@
             android:layout_alignRight="@+id/tagText"
             android:layout_below="@+id/tagText"
             android:layout_marginTop="16dp"
-            android:background="@drawable/buttonshape"
             android:onClick="onTaglineClick"
             android:text="@string/update"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="normal"
-            android:typeface="serif" />
+        	style="@style/button_gradient"/>
 
 </RelativeLayout>
