@@ -2,6 +2,7 @@ package com.example.fantasyfinance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
@@ -31,8 +32,10 @@ public class SearchStocks extends Fragment {
 	public ListView lv;
 
 	// Listview Adapter
-	ArrayAdapter<String> adapter;
-
+	public static final String KEY_NAME = "name";
+	public static final String KEY_SYMBOL = "symbol";
+	public static final String KEY_VALUE = "value";
+	
 	// Search EditText
 	EditText inputSearch;
 
