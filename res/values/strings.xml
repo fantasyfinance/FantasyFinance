@@ -29,5 +29,5 @@
     <string name="title_activity_search_stocks">SearchStocks</string>
     <string name="title_activity_predict_stocks">PredictStocks</string>
     <string name="title_activity_stock_info">StockInfo</string>
-
+	<string name="favorites">Favorites</string>
 </resources>

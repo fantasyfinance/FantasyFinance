@@ -32,9 +32,6 @@ public class SearchStocks extends Fragment {
 	public ListView lv;
 
 	// Listview Adapter
-	public static final String KEY_NAME = "name";
-	public static final String KEY_SYMBOL = "symbol";
-	public static final String KEY_VALUE = "value";
 	
 	// Search EditText
 	EditText inputSearch;
