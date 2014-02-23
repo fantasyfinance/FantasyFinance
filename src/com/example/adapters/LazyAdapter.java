@@ -3,8 +3,6 @@ package com.example.adapters;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.fantasyfinance.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.fantasyfinance.R;
+import com.example.utils.Constants;
 
 public class LazyAdapter extends BaseAdapter {
     
@@ -43,7 +44,6 @@ public class LazyAdapter extends BaseAdapter {
         View vi=convertView;
         if(convertView==null)
             vi = inflater.inflate(R.layout.list_row, null);
-
         TextView title = (TextView)vi.findViewById(R.id.companyName); 
         TextView artist = (TextView)vi.findViewById(R.id.stockSymbol);
         TextView duration = (TextView)vi.findViewById(R.id.stockValue);
@@ -52,9 +52,9 @@ public class LazyAdapter extends BaseAdapter {
         song = data.get(position);
         
         // Setting all values in listview
-        /*title.setText(song.get(CustomizedListView.KEY_NAME));
-        artist.setText(song.get(CustomizedListView.KEY_SYMBOL));
-        duration.setText(song.get(CustomizedListView.KEY_VALUE));*/
+        title.setText(song.get(Constants.KEY_NAME));
+        artist.setText(song.get(Constants.KEY_SYMBOL));
+        duration.setText(song.get(Constants.KEY_VALUE));
         return vi;
     }
 }
