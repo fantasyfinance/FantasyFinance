@@ -50,40 +50,43 @@ public final class R {
         public static final int textinputborder=0x7f020016;
     }
     public static final class id {
-        public static final int action_settings=0x7f090028;
-        public static final int adj_close=0x7f09001a;
-        public static final int beforeHoursValue=0x7f09001d;
+        public static final int action_settings=0x7f09002b;
+        public static final int adj_close=0x7f09001b;
+        public static final int beforeHoursValue=0x7f09001e;
         public static final int button1=0x7f090002;
-        public static final int companyName=0x7f090025;
-        public static final int dailyHigh=0x7f090017;
-        public static final int dailyLow=0x7f090019;
-        public static final int downButton=0x7f09001e;
+        public static final int companyName=0x7f090028;
+        public static final int dailyHigh=0x7f090018;
+        public static final int dailyLow=0x7f09001a;
+        public static final int downButton=0x7f09001f;
         public static final int editText1=0x7f090007;
         public static final int editText2=0x7f090006;
-        public static final int emailID=0x7f090014;
+        public static final int emailID=0x7f090015;
         public static final int followed_username=0x7f090000;
         public static final int forgotemailID=0x7f090003;
         public static final int imageButton1=0x7f090005;
         public static final int imageView1=0x7f090008;
+        public static final int lblListHeader=0x7f090023;
+        public static final int lblListItem=0x7f090025;
         public static final int list=0x7f090001;
-        public static final int listView1=0x7f090016;
-        public static final int list_image=0x7f090024;
-        public static final int logout=0x7f090029;
+        public static final int listView1=0x7f090017;
+        public static final int list_image=0x7f090027;
+        public static final int logout=0x7f09002c;
+        public static final int lvExp=0x7f090012;
         public static final int pager=0x7f090009;
         public static final int predict_username=0x7f09000a;
-        public static final int product_name=0x7f090022;
-        public static final int realTimeValue=0x7f09001b;
-        public static final int registerUsername=0x7f090013;
-        public static final int registerpwd=0x7f090012;
-        public static final int searchStock=0x7f090015;
-        public static final int selectedStock=0x7f09001c;
-        public static final int stockSymbol=0x7f090026;
-        public static final int stockValue=0x7f090027;
-        public static final int tagText=0x7f090021;
-        public static final int tagline=0x7f090020;
+        public static final int product_name=0x7f090024;
+        public static final int realTimeValue=0x7f09001c;
+        public static final int registerUsername=0x7f090014;
+        public static final int registerpwd=0x7f090013;
+        public static final int searchStock=0x7f090016;
+        public static final int selectedStock=0x7f09001d;
+        public static final int stockSymbol=0x7f090029;
+        public static final int stockValue=0x7f09002a;
+        public static final int tagText=0x7f090022;
+        public static final int tagline=0x7f090021;
         public static final int textView3=0x7f090004;
-        public static final int thumbnail=0x7f090023;
-        public static final int upButton=0x7f09001f;
+        public static final int thumbnail=0x7f090026;
+        public static final int upButton=0x7f090020;
         public static final int usergroups=0x7f090010;
         public static final int userivProfileImage=0x7f09000c;
         public static final int userllCounts=0x7f09000f;
@@ -91,7 +94,7 @@ public final class R {
         public static final int usersingles=0x7f090011;
         public static final int usertvName=0x7f09000d;
         public static final int usertvTagline=0x7f09000e;
-        public static final int volume=0x7f090018;
+        public static final int volume=0x7f090019;
     }
     public static final class layout {
         public static final int activity_followed_stocks=0x7f030000;
@@ -104,8 +107,10 @@ public final class R {
         public static final int activity_search_stocks=0x7f030007;
         public static final int activity_stock_info=0x7f030008;
         public static final int activity_tagline=0x7f030009;
-        public static final int list_item=0x7f03000a;
-        public static final int list_row=0x7f03000b;
+        public static final int list_group=0x7f03000a;
+        public static final int list_item=0x7f03000b;
+        public static final int list_item_result=0x7f03000c;
+        public static final int list_row=0x7f03000d;
     }
     public static final class menu {
         public static final int followed_stocks=0x7f080000;

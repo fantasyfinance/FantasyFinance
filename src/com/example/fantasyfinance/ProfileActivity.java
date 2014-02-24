@@ -1,5 +1,7 @@
 package com.example.fantasyfinance;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
@@ -10,8 +12,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ExpandableListView.OnGroupCollapseListener;
+import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.adapters.ExpandableListAdapter;
 import com.example.utils.Constants;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
@@ -26,6 +35,10 @@ public class ProfileActivity extends Fragment {
 	String username;
 	ParseUser currentUser;
 	final Context context = getActivity();
+	ExpandableListAdapter listAdapter;
+    ExpandableListView expListView;
+    List<String> listDataHeader;
+    HashMap<String, List<String>> listDataChild;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,8 +60,106 @@ public class ProfileActivity extends Fragment {
 			
 			
 		}
+		
+		// get the listview
+        expListView = (ExpandableListView) rootView.findViewById(R.id.lvExp);
+ 
+        // preparing list data
+        prepareListData();
+ 
+        listAdapter = new ExpandableListAdapter(getActivity().getApplicationContext(), listDataHeader, listDataChild);
+ 
+        // setting list adapter
+        expListView.setAdapter(listAdapter);
+ 
+        // Listview Group click listener
+        expListView.setOnGroupClickListener(new OnGroupClickListener() {
+ 
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v,
+                    int groupPosition, long id) {
+                // Toast.makeText(getApplicationContext(),
+                // "Group Clicked " + listDataHeader.get(groupPosition),
+                // Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+ 
+        // Listview Group expanded listener
+        expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
+ 
+            @Override
+            public void onGroupExpand(int groupPosition) {
+             /*   Toast.makeText(getActivity().getApplicationContext(),
+                        listDataHeader.get(groupPosition) + " Expanded",
+                        Toast.LENGTH_SHORT).show();*/
+            }
+        });
+ 
+        // Listview Group collasped listener
+        expListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
+ 
+            @Override
+            public void onGroupCollapse(int groupPosition) {
+               /* Toast.makeText(getActivity().getApplicationContext(),
+                        listDataHeader.get(groupPosition) + " Collapsed",
+                        Toast.LENGTH_SHORT).show();*/
+ 
+            }
+        });
+ 
+        // Listview on child click listener
+        expListView.setOnChildClickListener(new OnChildClickListener() {
+ 
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                    int groupPosition, int childPosition, long id) {
+                // TODO Auto-generated method stub
+                Toast.makeText(
+                        getActivity().getApplicationContext(),
+                        listDataHeader.get(groupPosition)
+                                + " : "
+                                + listDataChild.get(
+                                        listDataHeader.get(groupPosition)).get(
+                                        childPosition), Toast.LENGTH_SHORT)
+                        .show();
+                return false;
+            }
+        });
 		return rootView;
 	}
+	
+	private void prepareListData() {
+        listDataHeader = new ArrayList<String>();
+        listDataChild = new HashMap<String, List<String>>();
+ 
+        // Adding child data
+        listDataHeader.add("Feb 22 2014           5");
+        listDataHeader.add("Feb 23 2014           10");
+        listDataHeader.add("Feb 24 2014           15");
+ 
+        // Adding child data
+        List<String> date1 = new ArrayList<String>();
+        date1.add("AAPL             +5");
+        date1.add("YHOO             -5");
+        date1.add("BOFA             +5");
+        
+        List<String> date2 = new ArrayList<String>();
+        date2.add("FB               +5");
+        date2.add("GOOG             -5");
+        date2.add("YHOO             +5");
+        date2.add("FEYE             +5");
+ 
+        List<String> date3 = new ArrayList<String>();
+        date3.add("YHOO             +5");
+        date3.add("GOOG             +5");
+        date3.add("FEYE             +5");
+       
+ 
+        listDataChild.put(listDataHeader.get(0), date1); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), date2);
+        listDataChild.put(listDataHeader.get(2), date3);
+    }
 
 	private void setTag(String username) {
 

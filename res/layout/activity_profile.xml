@@ -79,4 +79,19 @@
             android:typeface="serif" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/userllCounts"
+        android:orientation="vertical" >
+
+        <ExpandableListView
+                android:id="@+id/lvExp"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/> 
+    </LinearLayout>
+
 </RelativeLayout>
