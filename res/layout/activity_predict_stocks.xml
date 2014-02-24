@@ -6,13 +6,28 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".PredictStocks" >
+    tools:context=".PredictStocks"
+    android:background="#4c66a4" >
 
+    
     <TextView
         android:id="@+id/predict_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:textColor="#ffffff" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/predictions"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textStyle="normal"/>
+
+    <ListView
+        android:id="@+id/predict_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/predict_username"
+        android:layout_centerHorizontal="true"
+        android:listSelector="@drawable/list_selector" >
+    </ListView>
 
 </RelativeLayout>
