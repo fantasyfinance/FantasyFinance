@@ -57,13 +57,13 @@ public final class R {
         public static final int companyName=0x7f090025;
         public static final int dailyHigh=0x7f090017;
         public static final int dailyLow=0x7f090019;
+        public static final int downButton=0x7f09001e;
         public static final int editText1=0x7f090007;
         public static final int editText2=0x7f090006;
         public static final int emailID=0x7f090014;
         public static final int followed_username=0x7f090000;
         public static final int forgotemailID=0x7f090003;
         public static final int imageButton1=0x7f090005;
-        public static final int imageButton2=0x7f09001e;
         public static final int imageView1=0x7f090008;
         public static final int list=0x7f090001;
         public static final int listView1=0x7f090016;

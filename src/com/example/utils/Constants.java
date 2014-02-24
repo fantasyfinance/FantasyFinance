@@ -11,7 +11,7 @@ public class Constants {
 	public static final String KEY_NAME = "name";
 	public static final String KEY_SYMBOL = "symbol";
 	public static final String KEY_VALUE = "value";
-	
+	public static final String not_Applicable = "n/a";
 	public static final String URL_HEADER ="http://query.yahooapis.com/v1/public/yql?q=";
 	public static final String query_beforeSymbol = "select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20=%20%22";//here symbol will come
 	public static final String query_afterSymbol_beforeStartDate = "%22%20and%20startDate%20=%20%22";//here start date will come

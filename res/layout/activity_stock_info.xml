@@ -61,7 +61,7 @@
         android:layout_below="@+id/selectedStock"
         android:layout_centerHorizontal="true"
         android:text="Real time: 38.26"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textColor="#ffffff"
         android:textStyle="normal"
         android:typeface="serif" />
@@ -94,8 +94,8 @@
         android:id="@+id/button1"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_alignTop="@+id/imageButton2"
-        android:layout_toLeftOf="@+id/imageButton2"
+        android:layout_alignTop="@+id/downButton"
+        android:layout_toLeftOf="@+id/downButton"
         android:layout_toRightOf="@+id/upButton"
         android:onClick="onStatusClick"
         android:text="@string/status"
@@ -116,13 +116,14 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/downButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/beforeHoursValue"
         android:layout_alignParentRight="true"
         android:background="#4c66a4"
-        android:src="@drawable/old_go_bottom" />
+        android:src="@drawable/old_go_bottom"
+        android:visibility="invisible" />
 
     <ImageButton
         android:id="@+id/upButton"
@@ -131,6 +132,7 @@
         android:layout_above="@+id/beforeHoursValue"
         android:layout_alignParentLeft="true"
         android:background="#4c66a4"
-        android:src="@drawable/old_go_top" />
+        android:src="@drawable/old_go_top"
+        android:visibility="invisible" />
 
 </RelativeLayout>

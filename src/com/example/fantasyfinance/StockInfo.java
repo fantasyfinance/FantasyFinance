@@ -10,19 +10,19 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.models.HandleXML;
 import com.example.utils.Constants;
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -35,7 +35,8 @@ public class StockInfo extends Activity {
 	String username;
 	String stock;
 	Button p1_button;
-
+	ImageButton upButton;
+	ImageButton downButton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,12 +47,11 @@ public class StockInfo extends Activity {
 			stock = getIntent().getStringExtra("selectedStock");
 			tvLabel.setText(stock);
 			username = getIntent().getStringExtra("username");
-			ParseQuery<ParseObject> query = ParseQuery
-					.getQuery("UserStockPreference");
-			query.whereEqualTo("user", username);
-			query.whereEqualTo("stock", stock);
+			
 			Log.d("DEBUG", stock);
 			Log.d("DEBUG", username);
+			
+			
 			
 			HandleXML obj = getValue(stock);
 			TextView realTime = (TextView)findViewById(R.id.realTimeValue);
@@ -67,6 +67,9 @@ public class StockInfo extends Activity {
 			TextView adj_close = (TextView)findViewById(R.id.adj_close);
 			adj_close.setText("Adj Close : "+obj.getAdjClose());
 			
+			ParseQuery<ParseObject> query = ParseQuery.getQuery("UserStockPreference");
+			query.whereEqualTo("user", username);
+			query.whereEqualTo("stock", stock);
 			query.findInBackground(new FindCallback<ParseObject>() {
 				public void done(List<ParseObject> records, ParseException e) {
 					if (records.size() > 0 && e == null) {
@@ -84,6 +87,44 @@ public class StockInfo extends Activity {
 					}
 				}
 			});
+			
+			ParseQuery<ParseObject> predict_query = ParseQuery.getQuery("Predict");
+			predict_query.whereEqualTo("user", username);
+			predict_query.whereEqualTo("stock", stock);
+			predict_query.findInBackground(new FindCallback<ParseObject>() {
+				public void done(List<ParseObject> records, ParseException e) {
+					if (records.size() > 0 && e == null) 
+					{
+						// so write the code to fetch prediction value
+						String id = records.get(0).getObjectId();
+						ParseQuery<ParseObject> prediction_value_query = ParseQuery.getQuery("Predict");
+						prediction_value_query.getInBackground(id,new GetCallback<ParseObject>() 
+								{
+									public void done(ParseObject predictionObject,ParseException e) 
+									{
+										if (e == null) 
+										{
+											String prediction_Value = predictionObject.get("prediction").toString();
+											if(prediction_Value.equals(Constants.not_Applicable))
+											{
+												upButton = (ImageButton) findViewById(R.id.upButton);
+												downButton = (ImageButton) findViewById(R.id.downButton);
+												upButton.setVisibility(View.VISIBLE);
+												downButton.setVisibility(View.VISIBLE);
+											}
+										}
+									}
+								});
+					} else if (e != null) {
+						Log.d("DEBUG", "Error: " + e.getMessage());
+					} else if (records.size() == 0 && e == null) {
+						upButton = (ImageButton) findViewById(R.id.upButton);
+						downButton = (ImageButton) findViewById(R.id.downButton);
+						upButton.setVisibility(View.VISIBLE);
+						downButton.setVisibility(View.VISIBLE);
+					}
+				}
+			});
 		}
 	}
 
@@ -94,11 +135,9 @@ public class StockInfo extends Activity {
 		Calendar cal = Calendar.getInstance();
 		int val = cal.get(Calendar.DAY_OF_WEEK);
 		if (val == 1) {
-			DateFormat dateFormat = new SimpleDateFormat(
-					"yyyy-MM-dd");
+			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			cal.add(Calendar.DATE, -2);
-			fDate = dateFormat.format(cal
-					.getTime());
+			fDate = dateFormat.format(cal.getTime());
 		} else if (val == 7) {
 			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			cal.add(Calendar.DATE, -1);

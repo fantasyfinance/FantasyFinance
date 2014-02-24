@@ -80,8 +80,7 @@ public class FollowedStocks extends Fragment {
 					int size = records.size();
 					for (int i = 0; i < size; i++) {
 						String id = records.get(i).getObjectId();
-						ParseQuery<ParseObject> query = ParseQuery
-								.getQuery("UserStockPreference");
+						ParseQuery<ParseObject> query = ParseQuery.getQuery("UserStockPreference");
 						query.getInBackground(id,new GetCallback<ParseObject>() 
 								{
 									public void done(ParseObject followObject,
