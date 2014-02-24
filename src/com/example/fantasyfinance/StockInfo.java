@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.models.HandleXML;
 import com.example.utils.Constants;
@@ -37,6 +41,7 @@ public class StockInfo extends Activity {
 	Button p1_button;
 	ImageButton upButton;
 	ImageButton downButton;
+	final Context context = this;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -126,6 +131,10 @@ public class StockInfo extends Activity {
 				}
 			});
 		}
+		else {
+			Intent intent = new Intent(this, Home.class);
+			startActivity(intent);
+		}
 	}
 
 	private HandleXML getValue(String company) {
@@ -173,6 +182,132 @@ public class StockInfo extends Activity {
 		StockInfo.this.finish();
 	}
 
+	public void onUpClick(View v)
+	{
+		if (currentUser != null) {
+			p1_button = (Button) findViewById(R.id.button1);
+			if(p1_button.getText().equals(Constants.follow))
+			{
+				ParseObject prediction = new ParseObject("Predict");
+				prediction.put("user", username);
+				prediction.put("stock", stock);
+				prediction.put("lock", "yes");
+				prediction.put("prediction", "HIGH");
+				prediction.saveInBackground();
+				Toast.makeText(getApplicationContext(),stock+" is predicted HIGH", Toast.LENGTH_LONG).show();
+			}	
+			else if (p1_button.getText().equals(Constants.unFollow))
+			{
+				ParseQuery<ParseObject> update_query = ParseQuery.getQuery("Predict");
+				update_query.whereEqualTo("user", username);
+				update_query.whereEqualTo("stock", stock);
+				update_query.whereEqualTo("lock", "no");
+				update_query.findInBackground(new FindCallback<ParseObject>() 
+				{
+					public void done(List<ParseObject> predict_object, ParseException e) 
+					{
+						if (predict_object.size()==1 && e == null) 
+						{
+							String objectID = predict_object.get(0).getObjectId();
+							ParseQuery<ParseObject> query = ParseQuery.getQuery("Predict");
+							query.getInBackground(objectID,new GetCallback<ParseObject>() 
+									{
+										public void done(ParseObject predict_line,ParseException e) 
+										{
+											if (e == null) 
+											{
+												predict_line.put("user", username);
+												predict_line.put("stock",stock);
+												predict_line.put("lock","yes");
+												predict_line.put("prediction", "HIGH");
+												predict_line.saveInBackground();
+												Toast.makeText(getApplicationContext(),stock+" is predicted HIGH", Toast.LENGTH_LONG).show();
+												
+											}
+										}
+									});
+						} else {
+							AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+							alertDialogBuilder.setTitle("Stock Already Predicted");
+							alertDialogBuilder.setMessage("Please Choose a Different Stock").setCancelable(false)
+								.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,int id) {
+										
+									}
+								  });
+							AlertDialog alertDialog = alertDialogBuilder.create();
+							alertDialog.show();
+						}
+					}
+				});
+			}
+		}
+		else 
+		{
+				Intent intent = new Intent(this, Home.class);
+				startActivity(intent);
+		}
+	}
+	
+	public void onDownClick(View v)
+	{
+		p1_button = (Button) findViewById(R.id.button1);
+		if(p1_button.getText().equals(Constants.follow))
+		{
+			ParseObject prediction = new ParseObject("Predict");
+			prediction.put("user", username);
+			prediction.put("stock", stock);
+			prediction.put("lock", "yes");
+			prediction.put("prediction", "LOW");
+			prediction.saveInBackground();
+			Toast.makeText(getApplicationContext(),stock+" is predicted LOW", Toast.LENGTH_LONG).show();
+		}
+		else if (p1_button.getText().equals(Constants.unFollow))
+		{
+			ParseQuery<ParseObject> update_query = ParseQuery.getQuery("Predict");
+			update_query.whereEqualTo("user", username);
+			update_query.whereEqualTo("stock", stock);
+			update_query.whereEqualTo("lock", "no");
+			update_query.findInBackground(new FindCallback<ParseObject>() 
+			{
+				public void done(List<ParseObject> predict_object, ParseException e) 
+				{
+					if (predict_object.size()==1 && e == null) 
+					{
+						String objectID = predict_object.get(0).getObjectId();
+						ParseQuery<ParseObject> query = ParseQuery.getQuery("Predict");
+						query.getInBackground(objectID,new GetCallback<ParseObject>() 
+								{
+									public void done(ParseObject predict_line,ParseException e) 
+									{
+										if (e == null) 
+										{
+											predict_line.put("user", username);
+											predict_line.put("stock",stock);
+											predict_line.put("lock","yes");
+											predict_line.put("prediction", "LOW");
+											predict_line.saveInBackground();
+											Toast.makeText(getApplicationContext(),stock+" is predicted LOW", Toast.LENGTH_LONG).show();
+										}
+									}
+								});
+					} else {
+						AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+						alertDialogBuilder.setTitle("Stock Already Predicted");
+						alertDialogBuilder.setMessage("Please Choose a Different Stock").setCancelable(false)
+							.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,int id) {
+									
+								}
+							  });
+						AlertDialog alertDialog = alertDialogBuilder.create();
+						alertDialog.show();
+					}
+				}
+			});
+		}
+	}
+	
 	public void onStatusClick(View v) {
 		
 		if (p1_button.getText().equals("Follow")) {

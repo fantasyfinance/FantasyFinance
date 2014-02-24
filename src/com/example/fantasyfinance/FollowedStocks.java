@@ -71,8 +71,7 @@ public class FollowedStocks extends Fragment {
 		final ArrayList<HashMap<String, String>> savedActivity = new ArrayList<HashMap<String, String>>();
 		Bundle b = getActivity().getIntent().getExtras();
 		username = b.getString("username");
-		ParseQuery<ParseObject> query = ParseQuery
-				.getQuery("UserStockPreference");
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("UserStockPreference");
 		query.whereEqualTo("user", username);
 		query.findInBackground(new FindCallback<ParseObject>() {
 			public void done(List<ParseObject> records, ParseException e) {
@@ -86,8 +85,7 @@ public class FollowedStocks extends Fragment {
 									public void done(ParseObject followObject,
 											ParseException e) {
 										if (e == null) {
-											String company = followObject.get(
-													"stock").toString();
+											String company = followObject.get("stock").toString();
 											companies.add(company);
 											HashMap<String, String> map = new HashMap<String, String>();
 											map.put(Constants.KEY_SYMBOL,company);

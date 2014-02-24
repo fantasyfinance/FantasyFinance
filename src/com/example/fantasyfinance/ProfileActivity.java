@@ -163,32 +163,28 @@ public class ProfileActivity extends Fragment {
 
 	private void setTag(String username) {
 
-		Parse.initialize(getActivity(), Constants.APPLICATION_KEY,
-				Constants.APPLICATION_KEY_TOKEN);
+		Parse.initialize(getActivity(), Constants.APPLICATION_KEY,Constants.APPLICATION_KEY_TOKEN);
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("TaglineModel");
 		query.whereEqualTo("user", username);
 		query.findInBackground(new FindCallback<ParseObject>() {
-			public void done(List<ParseObject> tags, ParseException e) {
+			public void done(List<ParseObject> tags, ParseException e) 
+			{
 				if (tags.size() == 1 && e == null) {
 					String objectID = tags.get(0).getObjectId();
-
-					ParseQuery<ParseObject> query = ParseQuery
-							.getQuery("TaglineModel");
-					query.getInBackground(objectID,
-							new GetCallback<ParseObject>() {
-								public void done(ParseObject taglineObject,
-										ParseException e) {
+					ParseQuery<ParseObject> query = ParseQuery.getQuery("TaglineModel");
+					query.getInBackground(objectID,new GetCallback<ParseObject>() 
+							{
+								public void done(ParseObject taglineObject,ParseException e) {
 									if (e == null) {
-										String tag = taglineObject.get("tag")
-												.toString();
-										TextView tagView = (TextView) getActivity()
-												.findViewById(
-														R.id.usertvTagline);
+										String tag = taglineObject.get("tag").toString();
+										TextView tagView = (TextView) getActivity().findViewById(R.id.usertvTagline);
 										tagView.setText(tag);
 									}
 								}
 							});
-				} else {
+				} 
+				else 
+				{
 					Log.d("DEBUG", "Error: " + e.getMessage());
 				}
 			}

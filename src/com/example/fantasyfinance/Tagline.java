@@ -62,12 +62,9 @@ public class Tagline extends Activity {
 				public void done(List<ParseObject> tags, ParseException e) {
 					if (tags.size()==1 && e == null) {
 						String objectID = tags.get(0).getObjectId();
-						ParseQuery<ParseObject> query = ParseQuery
-								.getQuery("TaglineModel");
-						query.getInBackground(objectID,
-								new GetCallback<ParseObject>() {
-									public void done(ParseObject taglineObject,
-											ParseException e) {
+						ParseQuery<ParseObject> query = ParseQuery.getQuery("TaglineModel");
+						query.getInBackground(objectID,new GetCallback<ParseObject>() {
+									public void done(ParseObject taglineObject,ParseException e) {
 										if (e == null) {
 											EditText et = (EditText) findViewById(R.id.tagText);
 											String tag = et.getText().toString();

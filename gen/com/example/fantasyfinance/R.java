@@ -50,11 +50,19 @@ public final class R {
         public static final int textinputborder=0x7f020016;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int action_settings=0x7f09002b;
         public static final int adj_close=0x7f09001b;
         public static final int beforeHoursValue=0x7f09001e;
         public static final int button1=0x7f090002;
         public static final int companyName=0x7f090028;
+=======
+        public static final int action_settings=0x7f090029;
+        public static final int adj_close=0x7f09001b;
+        public static final int beforeHoursValue=0x7f09001e;
+        public static final int button1=0x7f090002;
+        public static final int companyName=0x7f090026;
+>>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
         public static final int dailyHigh=0x7f090018;
         public static final int dailyLow=0x7f09001a;
         public static final int downButton=0x7f09001f;
@@ -69,17 +77,28 @@ public final class R {
         public static final int lblListItem=0x7f090025;
         public static final int list=0x7f090001;
         public static final int listView1=0x7f090017;
+<<<<<<< HEAD
         public static final int list_image=0x7f090027;
         public static final int logout=0x7f09002c;
         public static final int lvExp=0x7f090012;
+=======
+        public static final int list_image=0x7f090025;
+        public static final int logout=0x7f09002a;
+>>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
         public static final int pager=0x7f090009;
+        public static final int predict_list=0x7f09000b;
         public static final int predict_username=0x7f09000a;
+<<<<<<< HEAD
         public static final int product_name=0x7f090024;
+=======
+        public static final int product_name=0x7f090023;
+>>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
         public static final int realTimeValue=0x7f09001c;
         public static final int registerUsername=0x7f090014;
         public static final int registerpwd=0x7f090013;
         public static final int searchStock=0x7f090016;
         public static final int selectedStock=0x7f09001d;
+<<<<<<< HEAD
         public static final int stockSymbol=0x7f090029;
         public static final int stockValue=0x7f09002a;
         public static final int tagText=0x7f090022;
@@ -94,6 +113,22 @@ public final class R {
         public static final int usersingles=0x7f090011;
         public static final int usertvName=0x7f09000d;
         public static final int usertvTagline=0x7f09000e;
+=======
+        public static final int stockSymbol=0x7f090027;
+        public static final int stockValue=0x7f090028;
+        public static final int tagText=0x7f090022;
+        public static final int tagline=0x7f090021;
+        public static final int textView3=0x7f090004;
+        public static final int thumbnail=0x7f090024;
+        public static final int upButton=0x7f090020;
+        public static final int usergroups=0x7f090011;
+        public static final int userivProfileImage=0x7f09000d;
+        public static final int userllCounts=0x7f090010;
+        public static final int userrlHeader=0x7f09000c;
+        public static final int usersingles=0x7f090012;
+        public static final int usertvName=0x7f09000e;
+        public static final int usertvTagline=0x7f09000f;
+>>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
         public static final int volume=0x7f090019;
     }
     public static final class layout {
@@ -139,6 +174,7 @@ public final class R {
         public static final int login=0x7f060008;
         public static final int logout=0x7f060011;
         public static final int password=0x7f060006;
+        public static final int predictions=0x7f06001d;
         public static final int register=0x7f06000c;
         public static final int status=0x7f060009;
         public static final int submit=0x7f060004;
