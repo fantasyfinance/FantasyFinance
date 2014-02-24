@@ -15,6 +15,8 @@ public class HandleXML {
 	   private String low = "Low";
 	   private String high = "High";
 	   private String open = "Open";
+	   private String volume = "Volume";
+	   private String adj_close = "Adj_Close";
 	   private String urlString = null;
 	   private XmlPullParserFactory xmlFactoryObject;
 	   public volatile boolean parsingComplete = true;
@@ -33,6 +35,13 @@ public class HandleXML {
 	   public String getOpen(){
 	      return open;
 	   }
+	   public String getVolume(){
+		   return volume;
+	   }
+	   public String getAdjClose(){
+		   return adj_close;
+	   }
+	   
 
 	   public void parseXMLAndStoreIt(XmlPullParser myParser) {
 	      int event;
@@ -64,7 +73,14 @@ public class HandleXML {
 	                  							  //low = myParser.getAttributeValue(null,"value");
 	                  							  low = text;
 	                  						  }
+	                  						  else if(name.equals("Volume")){
+	                  							  volume = text;
+	                  						  }
+	                  						  else if(name.equals("Adj_Close")){
+	                  							  adj_close = text;
+	                  						  }
 	                  						  else{
+	                  							  
 	                  						  }
 	                  						break;
 	            }		 

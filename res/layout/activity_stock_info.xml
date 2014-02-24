@@ -13,7 +13,7 @@
         android:id="@+id/dailyHigh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/yearlyLow"
+        android:layout_alignLeft="@+id/volume"
         android:layout_below="@+id/dailyLow"
         android:text="Daily High : 38.59"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -22,24 +22,24 @@
         android:typeface="serif" />
 
     <TextView
-        android:id="@+id/yearlyLow"
+        android:id="@+id/volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dailyHigh"
         android:layout_centerHorizontal="true"
-        android:text="Yearly Low : 20.58"
+        android:text="Volume : 1234567"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff"
         android:textStyle="normal"
         android:typeface="serif" />
 
     <TextView
-        android:id="@+id/yearlyHigh"
+        android:id="@+id/adj_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/yearlyLow"
+        android:layout_below="@+id/volume"
         android:layout_centerHorizontal="true"
-        android:text="Yearly High : 41.72"
+        android:text="Adj Close : 37.29"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff"
         android:textStyle="normal"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/yearlyHigh"
+        android:layout_below="@+id/adj_close"
         android:src="@drawable/sample" />
 
     <TextView
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/dailyLow"
-        android:layout_alignRight="@+id/yearlyLow"
+        android:layout_alignRight="@+id/volume"
         android:text="Before Hours : 38.30"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff"
@@ -82,7 +82,7 @@
         android:id="@+id/dailyLow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/yearlyHigh"
+        android:layout_alignLeft="@+id/adj_close"
         android:layout_centerVertical="true"
         android:text="Daily Low : 38.09"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -113,15 +113,7 @@
         android:textStyle="normal"
         android:typeface="serif" />
 
-<!--     <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/selectedStock"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="14dp"
-        android:background="#4c66a4"
-        android:src="@android:drawable/btn_star_big_on" /> -->
+
 
     <ImageButton
         android:id="@+id/imageButton2"

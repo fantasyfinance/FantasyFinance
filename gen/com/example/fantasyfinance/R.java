@@ -51,6 +51,7 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f090028;
+        public static final int adj_close=0x7f09001a;
         public static final int beforeHoursValue=0x7f09001d;
         public static final int button1=0x7f090002;
         public static final int companyName=0x7f090025;
@@ -90,8 +91,7 @@ public final class R {
         public static final int usersingles=0x7f090011;
         public static final int usertvName=0x7f09000d;
         public static final int usertvTagline=0x7f09000e;
-        public static final int yearlyHigh=0x7f09001a;
-        public static final int yearlyLow=0x7f090018;
+        public static final int volume=0x7f090018;
     }
     public static final class layout {
         public static final int activity_followed_stocks=0x7f030000;

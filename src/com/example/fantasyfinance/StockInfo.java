@@ -1,9 +1,14 @@
 package com.example.fantasyfinance;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentActivity;
@@ -15,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.models.HandleXML;
 import com.example.utils.Constants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -47,6 +53,20 @@ public class StockInfo extends Activity {
 			Log.d("DEBUG", stock);
 			Log.d("DEBUG", username);
 			
+			HandleXML obj = getValue(stock);
+			TextView realTime = (TextView)findViewById(R.id.realTimeValue);
+			realTime.setText("Real Time:"+obj.getClose());
+			TextView beforeHours = (TextView)findViewById(R.id.beforeHoursValue);
+			beforeHours.setText("Before Hours : "+obj.getClose());
+			TextView dailylow = (TextView)findViewById(R.id.dailyLow);
+			dailylow.setText("Daily Low : "+obj.getLow());
+			TextView dailyHigh = (TextView)findViewById(R.id.dailyHigh);
+			dailyHigh.setText("Daily High : "+obj.getHigh());
+			TextView volume = (TextView)findViewById(R.id.volume);
+			volume.setText("Volume : "+obj.getVolume());
+			TextView adj_close = (TextView)findViewById(R.id.adj_close);
+			adj_close.setText("Adj Close : "+obj.getAdjClose());
+			
 			query.findInBackground(new FindCallback<ParseObject>() {
 				public void done(List<ParseObject> records, ParseException e) {
 					if (records.size() > 0 && e == null) {
@@ -65,6 +85,44 @@ public class StockInfo extends Activity {
 				}
 			});
 		}
+	}
+
+	private HandleXML getValue(String company) {
+		Date cDate = new Date();
+		HandleXML obj;
+		String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+		Calendar cal = Calendar.getInstance();
+		int val = cal.get(Calendar.DAY_OF_WEEK);
+		if (val == 1) {
+			DateFormat dateFormat = new SimpleDateFormat(
+					"yyyy-MM-dd");
+			cal.add(Calendar.DATE, -2);
+			fDate = dateFormat.format(cal
+					.getTime());
+		} else if (val == 7) {
+			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			cal.add(Calendar.DATE, -1);
+			fDate = dateFormat.format(cal.getTime());
+		}
+
+		String url = getUrl(fDate, company);
+		obj = new HandleXML(url);
+	    obj.fetchXML();
+	    while (obj.parsingComplete);
+	    Log.d("DEBUG",obj.getClose());
+		return obj;
+	}
+
+	private String getUrl(String fDate,String company) {
+		String url = Constants.URL_HEADER
+				+ Constants.query_beforeSymbol
+				+ Uri.encode(company)
+				+ Constants.query_afterSymbol_beforeStartDate
+				+ Uri.encode(fDate)
+				+ Constants.query_afterStartDate
+				+ Uri.encode(fDate)
+				+ Constants.query_afterEndDDate;
+		return url;
 	}
 
 	public void onLogoutAction(MenuItem mi) {
