@@ -11,12 +11,13 @@ import android.util.Log;
 
 public class HandleXML {
 	
-	   private String close = "Close";
-	   private String low = "Low";
-	   private String high = "High";
+	   //private String close = "Close";
+	   private String close = "AskRealtime";
+	   private String low = "DaysLow";
+	   private String high = "DaysHigh";
 	   private String open = "Open";
 	   private String volume = "Volume";
-	   private String adj_close = "Adj_Close";
+	   private String adj_close = "LastTradePriceOnly";
 	   private String urlString = null;
 	   private XmlPullParserFactory xmlFactoryObject;
 	   public volatile boolean parsingComplete = true;
@@ -57,11 +58,11 @@ public class HandleXML {
 	               case XmlPullParser.TEXT:text = myParser.getText();
 	               							break;
 
-	               case XmlPullParser.END_TAG:if(name.equals("Close")){
+	               case XmlPullParser.END_TAG:if(name.equals("AskRealtime")){
 	                     							close = text;
 	                     							Log.d("DEBUG","CLOSE");
 	                  							}
-	                  						  else if(name.equals("High")){ 	
+	                  						  else if(name.equals("DaysHigh")){ 	
 	                  							  //high = myParser.getAttributeValue(null,"value");
 	                  							  high = text;
 	                  						  }
@@ -69,14 +70,14 @@ public class HandleXML {
 	                  							  //open = myParser.getAttributeValue(null,"value");
 	                  							  open = text;
 	                  						  }
-	                  						  else if(name.equals("Low")){
+	                  						  else if(name.equals("DaysLow")){
 	                  							  //low = myParser.getAttributeValue(null,"value");
 	                  							  low = text;
 	                  						  }
 	                  						  else if(name.equals("Volume")){
 	                  							  volume = text;
 	                  						  }
-	                  						  else if(name.equals("Adj_Close")){
+	                  						  else if(name.equals("LastTradePriceOnly")){
 	                  							  adj_close = text;
 	                  						  }
 	                  						  else{

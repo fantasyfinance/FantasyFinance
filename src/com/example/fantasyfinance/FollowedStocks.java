@@ -122,7 +122,7 @@ public class FollowedStocks extends Fragment {
 										return obj.getClose();
 									}
 
-									private String getUrl(String fDate,String company) {
+/*									private String getUrl(String fDate,String company) {
 										String url = Constants.URL_HEADER
 												+ Constants.query_beforeSymbol
 												+ Uri.encode(company)
@@ -131,6 +131,14 @@ public class FollowedStocks extends Fragment {
 												+ Constants.query_afterStartDate
 												+ Uri.encode(fDate)
 												+ Constants.query_afterEndDDate;
+										return url;
+									}*/
+									
+									private String getUrl(String fDate,String company) {
+										String url = Constants.URL_HEADER
+												+ Constants.query_beforeSymbol
+												+ Uri.encode(company)
+												+ Constants.query_afterSymbol_beforeStartDate;
 										return url;
 									}
 								});

@@ -161,7 +161,7 @@ public class StockInfo extends Activity {
 		return obj;
 	}
 
-	private String getUrl(String fDate,String company) {
+/*	private String getUrl(String fDate,String company) {
 		String url = Constants.URL_HEADER
 				+ Constants.query_beforeSymbol
 				+ Uri.encode(company)
@@ -170,6 +170,14 @@ public class StockInfo extends Activity {
 				+ Constants.query_afterStartDate
 				+ Uri.encode(fDate)
 				+ Constants.query_afterEndDDate;
+		return url;
+	}*/
+	
+	private String getUrl(String fDate,String company) {
+		String url = Constants.URL_HEADER
+				+ Constants.query_beforeSymbol
+				+ Uri.encode(company)
+				+ Constants.query_afterSymbol_beforeStartDate;
 		return url;
 	}
 

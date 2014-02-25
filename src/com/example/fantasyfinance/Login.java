@@ -101,13 +101,9 @@ public class Login extends FragmentActivity implements ActionBar.TabListener{
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 					context);
 			alertDialogBuilder.setTitle("Please login to continue");
-			alertDialogBuilder
-					.setMessage("Click Ok to exit!")
-					.setCancelable(false)
-					.setPositiveButton("Ok",
+			alertDialogBuilder.setMessage("Click Ok to exit!").setCancelable(false).setPositiveButton("Ok",
 							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
+								public void onClick(DialogInterface dialog,int id) {
 									Intent logout = new Intent(getApplicationContext(), Home.class);
 									startActivity(logout);
 									overridePendingTransition(R.anim.left_out, R.anim.right_in);
