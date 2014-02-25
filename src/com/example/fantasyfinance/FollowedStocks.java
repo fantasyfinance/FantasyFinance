@@ -105,11 +105,9 @@ public class FollowedStocks extends Fragment {
 										Calendar cal = Calendar.getInstance();
 										int val = cal.get(Calendar.DAY_OF_WEEK);
 										if (val == 1) {
-											DateFormat dateFormat = new SimpleDateFormat(
-													"yyyy-MM-dd");
+											DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 											cal.add(Calendar.DATE, -2);
-											fDate = dateFormat.format(cal
-													.getTime());
+											fDate = dateFormat.format(cal.getTime());
 										} else if (val == 7) {
 											DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 											cal.add(Calendar.DATE, -1);
