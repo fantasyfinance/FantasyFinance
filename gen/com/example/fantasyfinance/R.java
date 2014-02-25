@@ -35,92 +35,63 @@ public final class R {
         public static final int gradient_bg_hover=0x7f020007;
         public static final int gradient_pressed_bg=0x7f020008;
         public static final int ic_delete_bin=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
-        public static final int ic_logout=0x7f02000b;
-        public static final int ic_tagline=0x7f02000c;
-        public static final int image_bg=0x7f02000d;
-        public static final int list_border=0x7f02000e;
-        public static final int list_selector=0x7f02000f;
-        public static final int old_go_bottom=0x7f020010;
-        public static final int old_go_top=0x7f020011;
-        public static final int player_icon=0x7f020012;
-        public static final int sample=0x7f020013;
-        public static final int states_button=0x7f020014;
-        public static final int states_selector_list=0x7f020015;
-        public static final int textinputborder=0x7f020016;
+        public static final int ic_ff=0x7f02000a;
+        public static final int ic_ff1=0x7f02000b;
+        public static final int ic_ff2=0x7f02000c;
+        public static final int ic_ff3=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int ic_logout=0x7f02000f;
+        public static final int ic_tagline=0x7f020010;
+        public static final int image_bg=0x7f020011;
+        public static final int list_border=0x7f020012;
+        public static final int list_selector=0x7f020013;
+        public static final int old_go_bottom=0x7f020014;
+        public static final int old_go_top=0x7f020015;
+        public static final int player_icon=0x7f020016;
+        public static final int sample=0x7f020017;
+        public static final int states_button=0x7f020018;
+        public static final int states_selector_list=0x7f020019;
+        public static final int textinputborder=0x7f02001a;
     }
     public static final class id {
-<<<<<<< HEAD
-        public static final int action_settings=0x7f09002b;
-        public static final int adj_close=0x7f09001b;
-        public static final int beforeHoursValue=0x7f09001e;
+        public static final int action_settings=0x7f09002c;
+        public static final int adj_close=0x7f09001c;
+        public static final int beforeHoursValue=0x7f09001f;
         public static final int button1=0x7f090002;
-        public static final int companyName=0x7f090028;
-=======
-        public static final int action_settings=0x7f090029;
-        public static final int adj_close=0x7f09001b;
-        public static final int beforeHoursValue=0x7f09001e;
-        public static final int button1=0x7f090002;
-        public static final int companyName=0x7f090026;
->>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
-        public static final int dailyHigh=0x7f090018;
-        public static final int dailyLow=0x7f09001a;
-        public static final int downButton=0x7f09001f;
+        public static final int companyName=0x7f090029;
+        public static final int dailyHigh=0x7f090019;
+        public static final int dailyLow=0x7f09001b;
+        public static final int downButton=0x7f090020;
         public static final int editText1=0x7f090007;
         public static final int editText2=0x7f090006;
-        public static final int emailID=0x7f090015;
+        public static final int emailID=0x7f090016;
         public static final int followed_username=0x7f090000;
         public static final int forgotemailID=0x7f090003;
         public static final int imageButton1=0x7f090005;
         public static final int imageView1=0x7f090008;
-        public static final int lblListHeader=0x7f090023;
-        public static final int lblListItem=0x7f090025;
+        public static final int lblListHeader=0x7f090024;
+        public static final int lblListItem=0x7f090026;
         public static final int list=0x7f090001;
-        public static final int listView1=0x7f090017;
-<<<<<<< HEAD
-        public static final int list_image=0x7f090027;
-        public static final int logout=0x7f09002c;
-        public static final int lvExp=0x7f090012;
-=======
-        public static final int list_image=0x7f090025;
-        public static final int logout=0x7f09002a;
->>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
+        public static final int listView1=0x7f090018;
+        public static final int list_image=0x7f090028;
+        public static final int logout=0x7f09002d;
+        public static final int lvExp=0x7f090013;
         public static final int pager=0x7f090009;
         public static final int predict_list=0x7f09000b;
         public static final int predict_username=0x7f09000a;
-<<<<<<< HEAD
-        public static final int product_name=0x7f090024;
-=======
-        public static final int product_name=0x7f090023;
->>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
-        public static final int realTimeValue=0x7f09001c;
-        public static final int registerUsername=0x7f090014;
-        public static final int registerpwd=0x7f090013;
-        public static final int searchStock=0x7f090016;
-        public static final int selectedStock=0x7f09001d;
-<<<<<<< HEAD
-        public static final int stockSymbol=0x7f090029;
-        public static final int stockValue=0x7f09002a;
-        public static final int tagText=0x7f090022;
-        public static final int tagline=0x7f090021;
+        public static final int product_name=0x7f090025;
+        public static final int realTimeValue=0x7f09001d;
+        public static final int registerUsername=0x7f090015;
+        public static final int registerpwd=0x7f090014;
+        public static final int searchStock=0x7f090017;
+        public static final int selectedStock=0x7f09001e;
+        public static final int stockSymbol=0x7f09002a;
+        public static final int stockValue=0x7f09002b;
+        public static final int tagText=0x7f090023;
+        public static final int tagline=0x7f090022;
         public static final int textView3=0x7f090004;
-        public static final int thumbnail=0x7f090026;
-        public static final int upButton=0x7f090020;
-        public static final int usergroups=0x7f090010;
-        public static final int userivProfileImage=0x7f09000c;
-        public static final int userllCounts=0x7f09000f;
-        public static final int userrlHeader=0x7f09000b;
-        public static final int usersingles=0x7f090011;
-        public static final int usertvName=0x7f09000d;
-        public static final int usertvTagline=0x7f09000e;
-=======
-        public static final int stockSymbol=0x7f090027;
-        public static final int stockValue=0x7f090028;
-        public static final int tagText=0x7f090022;
-        public static final int tagline=0x7f090021;
-        public static final int textView3=0x7f090004;
-        public static final int thumbnail=0x7f090024;
-        public static final int upButton=0x7f090020;
+        public static final int thumbnail=0x7f090027;
+        public static final int upButton=0x7f090021;
         public static final int usergroups=0x7f090011;
         public static final int userivProfileImage=0x7f09000d;
         public static final int userllCounts=0x7f090010;
@@ -128,8 +99,7 @@ public final class R {
         public static final int usersingles=0x7f090012;
         public static final int usertvName=0x7f09000e;
         public static final int usertvTagline=0x7f09000f;
->>>>>>> 01ab5f37894654915cf7154a713b0f351698f63e
-        public static final int volume=0x7f090019;
+        public static final int volume=0x7f09001a;
     }
     public static final class layout {
         public static final int activity_followed_stocks=0x7f030000;
