@@ -12,12 +12,9 @@ public class Constants {
 	public static final String KEY_SYMBOL = "symbol";
 	public static final String KEY_VALUE = "value";
 	public static final String not_Applicable = "n/a";
-	/*public static final String URL_HEADER ="http://query.yahooapis.com/v1/public/yql?q=";
-	public static final String query_beforeSymbol = "select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20=%20%22";//here symbol will come
-	public static final String query_afterSymbol_beforeStartDate = "%22%20and%20startDate%20=%20%22";//here start date will come
-	public static final String query_afterStartDate = "%22%20and%20endDate%20=%20%22";//here end date will come
-	public static final String query_afterEndDDate = "%22&env=store://datatables.org/alltableswithkeys";*/
-	
+
+	public static final String IMAGE_URL_HEADER ="http://chart.finance.yahoo.com/z?s=";
+	public static final String IMAGE_URL_TRAILER = "&t=6m&q=l&l=on&z=l";
 	
 	public static final String URL_HEADER ="http://query.yahooapis.com/v1/public/yql?q=";
 	public static final String query_beforeSymbol = "select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22";//here symbol will come

@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.squareup.picasso.Picasso;
 
 public class StockInfo extends Activity {
 
@@ -53,11 +55,6 @@ public class StockInfo extends Activity {
 			tvLabel.setText(stock);
 			username = getIntent().getStringExtra("username");
 			
-			Log.d("DEBUG", stock);
-			Log.d("DEBUG", username);
-			
-			
-			
 			HandleXML obj = getValue(stock);
 			TextView realTime = (TextView)findViewById(R.id.realTimeValue);
 			realTime.setText("Real Time:"+obj.getClose());
@@ -71,6 +68,10 @@ public class StockInfo extends Activity {
 			volume.setText("Volume : "+obj.getVolume());
 			TextView adj_close = (TextView)findViewById(R.id.adj_close);
 			adj_close.setText("Adj Close : "+obj.getAdjClose());
+			
+			ImageView iv = (ImageView)findViewById(R.id.imageView1);
+			String stockChart = getUrl(stock);
+			Picasso.with(getApplicationContext()).load(stockChart).into(iv);
 			
 			ParseQuery<ParseObject> query = ParseQuery.getQuery("UserStockPreference");
 			query.whereEqualTo("user", username);
@@ -161,17 +162,10 @@ public class StockInfo extends Activity {
 		return obj;
 	}
 
-/*	private String getUrl(String fDate,String company) {
-		String url = Constants.URL_HEADER
-				+ Constants.query_beforeSymbol
-				+ Uri.encode(company)
-				+ Constants.query_afterSymbol_beforeStartDate
-				+ Uri.encode(fDate)
-				+ Constants.query_afterStartDate
-				+ Uri.encode(fDate)
-				+ Constants.query_afterEndDDate;
+	private String getUrl(String stock) {
+		String url = Constants.IMAGE_URL_HEADER+stock+Constants.IMAGE_URL_TRAILER;
 		return url;
-	}*/
+	}
 	
 	private String getUrl(String fDate,String company) {
 		String url = Constants.URL_HEADER
