@@ -322,14 +322,6 @@ public class StockInfo extends Activity {
 			userstock.put("stock", stock);
 			userstock.saveInBackground();
 			
-			ParseObject prediction = new ParseObject("Predict");
-			prediction.put("user", username);
-			prediction.put("stock", stock);
-			prediction.put("lock", "no");
-			prediction.put("prediction", "n/a");
-			prediction.saveInBackground();
-			
-			
 			Intent intent = new Intent(this, Login.class);
 			intent.putExtra("username",username);
 			intent.putExtra("stock", stock);
@@ -340,27 +332,13 @@ public class StockInfo extends Activity {
 			Log.d("DEBUG","UnFollow");
 			username = getIntent().getStringExtra("username");
 			stock = getIntent().getStringExtra("selectedStock");
-			ParseQuery<ParseObject> query = ParseQuery
-					.getQuery("UserStockPreference");
+			ParseQuery<ParseObject> query = ParseQuery.getQuery("UserStockPreference");
 			query.whereEqualTo("user", username);
 			query.whereEqualTo("stock", stock);
 			query.findInBackground(new FindCallback<ParseObject>() {
 				public void done(List<ParseObject> records, ParseException e) {
 					if (records.size() == 1 && e == null) {
 						records.get(0).deleteInBackground();
-						ParseQuery<ParseObject> query = ParseQuery
-								.getQuery("Predict");
-						query.whereEqualTo("user", username);
-						query.whereEqualTo("stock", stock);
-						query.findInBackground(new FindCallback<ParseObject>() {
-							public void done(List<ParseObject> records, ParseException e) {
-								if (records.size() == 1 && e == null) {
-									records.get(0).deleteInBackground();
-								} else if (records.size() == 0 && e == null) {
-									
-								}
-							}
-						});
 					} else if (records.size() == 0 && e == null) {
 						
 					}
